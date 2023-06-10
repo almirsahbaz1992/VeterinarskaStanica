@@ -113,6 +113,7 @@
 			btnSlika.TabIndex = 20;
 			btnSlika.Text = "Odaberi sliku usluge";
 			btnSlika.UseVisualStyleBackColor = true;
+			btnSlika.Click += btnSlika_Click;
 			// 
 			// btnSacuvaj
 			// 
@@ -122,6 +123,7 @@
 			btnSacuvaj.TabIndex = 19;
 			btnSacuvaj.Text = "Sačuvaj";
 			btnSacuvaj.UseVisualStyleBackColor = true;
+			btnSacuvaj.Click += btnSacuvaj_Click;
 			// 
 			// cbJediniceMjere
 			// 
@@ -145,6 +147,7 @@
 			txtCijena.Name = "txtCijena";
 			txtCijena.Size = new Size(186, 27);
 			txtCijena.TabIndex = 16;
+			txtCijena.Validating += txtCijena_Validating;
 			// 
 			// txtSifra
 			// 
@@ -152,6 +155,7 @@
 			txtSifra.Name = "txtSifra";
 			txtSifra.Size = new Size(186, 27);
 			txtSifra.TabIndex = 15;
+			txtSifra.Validating += txtSifra_Validating;
 			// 
 			// txtNaziv
 			// 
@@ -159,6 +163,7 @@
 			txtNaziv.Name = "txtNaziv";
 			txtNaziv.Size = new Size(186, 27);
 			txtNaziv.TabIndex = 14;
+			txtNaziv.Validating += txtNaziv_Validating;
 			// 
 			// errorProvider1
 			// 
@@ -191,7 +196,8 @@
 			Controls.Add(txtSifra);
 			Controls.Add(txtNaziv);
 			Name = "frmUslugeDetails";
-			Text = "frmUslugeDetails";
+			Text = "Detalji o usluzi";
+			Load += frmUslugeDetails_Load;
 			((System.ComponentModel.ISupportInitialize)image).EndInit();
 			((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
 			((System.ComponentModel.ISupportInitialize)errorProvider2).EndInit();

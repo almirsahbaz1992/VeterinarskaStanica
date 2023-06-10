@@ -16,24 +16,5 @@ namespace VeterinarskaStanica.Controllers
 			{
 				ProizvodiService = proizvodiService;
 			}
-			[HttpPut("{id}/Activate")]
-			public Model.Usluge Activate(int id)
-			{
-				var result = ProizvodiService.Activate(id);
-				return result;
-			}
-			[HttpPut("{id}/AllowedActions")]
-			public List<string> AllowedActions(int id)
-			{
-				var result = ProizvodiService.AllowedActions(id);
-				return result;
-			}
-			[HttpGet("{id}/Recommend")]
-			[AllowAnonymous]
-			public List<Model.Usluge> Recommend(int id)
-			{
-				var result = ProizvodiService.Recommend(id);
-				return result;
-			}
 		}
 	}

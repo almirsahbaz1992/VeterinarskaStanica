@@ -120,5 +120,14 @@ namespace VeterinarskaStanica.WinUI
 
 			frm.Show();
 		}
+
+		private void unosNoveUslugeToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			frmUslugeDetails frm = new frmUslugeDetails();
+			frm.MdiParent = this;
+			frm.WindowState = FormWindowState.Maximized;
+
+			frm.Show();
+		}
 	}
 }

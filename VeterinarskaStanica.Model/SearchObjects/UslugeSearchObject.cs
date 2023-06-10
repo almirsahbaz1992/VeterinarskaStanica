@@ -8,5 +8,6 @@ namespace VeterinarskaStanica.Model.SearchObjects
 	{
 		public string Naziv { get; set; }
 		public string Sifra { get; set; }
+		public int? UslugaID { get; set; }
 	}
 }

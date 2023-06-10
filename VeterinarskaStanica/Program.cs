@@ -39,7 +39,7 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 builder.Services.AddTransient<IProizvodiService, ProizvodiService>();
-//builder.Services.AddTransient<IUslugeService, UslugeService>();
+builder.Services.AddTransient<IUslugeService, UslugeService>();
 builder.Services.AddTransient<IKorisniciService, KorisniciService>();
 builder.Services.AddTransient<IJediniceMjereService, JediniceMjereService>();
 builder.Services.AddTransient<IVrsteProizvodaService, VrsteProizvodaService>();
