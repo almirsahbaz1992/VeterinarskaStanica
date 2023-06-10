@@ -12,8 +12,8 @@ using VeterinarskaStanica.Services.Database;
 namespace VeterinarskaStanica.Services.Migrations
 {
     [DbContext(typeof(VeterinarskaStanicaContext))]
-    [Migration("20230610145635_Initial")]
-    partial class Initial
+    [Migration("20230610204300_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -306,6 +306,25 @@ namespace VeterinarskaStanica.Services.Migrations
                     b.ToTable("Proizvodi", (string)null);
                 });
 
+            modelBuilder.Entity("VeterinarskaStanica.Services.Database.RadnaMjesta", b =>
+                {
+                    b.Property<int>("RadnaMjestaId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("RadnaMjestaID");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RadnaMjestaId"));
+
+                    b.Property<string>("Naziv")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("RadnaMjestaId");
+
+                    b.ToTable("RadnaMjesta", (string)null);
+                });
+
             modelBuilder.Entity("VeterinarskaStanica.Services.Database.Uloge", b =>
                 {
                     b.Property<int>("UlogaId")
@@ -421,6 +440,42 @@ namespace VeterinarskaStanica.Services.Migrations
                     b.ToTable("VrsteUslugas");
                 });
 
+            modelBuilder.Entity("VeterinarskaStanica.Services.Database.Zaposlenici", b =>
+                {
+                    b.Property<int>("ZaposlenikID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("ZaposlenikID");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ZaposlenikID"));
+
+                    b.Property<DateTime>("DatumZaposlenja")
+                        .HasColumnType("datetime");
+
+                    b.Property<string>("Ime")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<decimal>("Plata")
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<string>("Prezime")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<int>("RadnoMjestoId")
+                        .HasColumnType("int")
+                        .HasColumnName("RadnoMjestoID");
+
+                    b.HasKey("ZaposlenikID");
+
+                    b.HasIndex("RadnoMjestoId");
+
+                    b.ToTable("Zaposlenici");
+                });
+
             modelBuilder.Entity("VeterinarskaStanica.Services.Database.KorisniciUloge", b =>
                 {
                     b.HasOne("VeterinarskaStanica.Services.Database.Korisnici", "Korisnik")
@@ -512,6 +567,17 @@ namespace VeterinarskaStanica.Services.Migrations
                     b.Navigation("Usluga");
                 });
 
+            modelBuilder.Entity("VeterinarskaStanica.Services.Database.Zaposlenici", b =>
+                {
+                    b.HasOne("VeterinarskaStanica.Services.Database.RadnaMjesta", "RadnaMjesta")
+                        .WithMany("Zaposlenicis")
+                        .HasForeignKey("RadnoMjestoId")
+                        .IsRequired()
+                        .HasConstraintName("FK_Zaposlenici_RadnaMjesta");
+
+                    b.Navigation("RadnaMjesta");
+                });
+
             modelBuilder.Entity("VeterinarskaStanica.Services.Database.JediniceMjere", b =>
                 {
                     b.Navigation("Proizvodis");
@@ -537,6 +603,11 @@ namespace VeterinarskaStanica.Services.Migrations
             modelBuilder.Entity("VeterinarskaStanica.Services.Database.Proizvodi", b =>
                 {
                     b.Navigation("NarudzbaStavkes");
+                });
+
+            modelBuilder.Entity("VeterinarskaStanica.Services.Database.RadnaMjesta", b =>
+                {
+                    b.Navigation("Zaposlenicis");
                 });
 
             modelBuilder.Entity("VeterinarskaStanica.Services.Database.Uloge", b =>

@@ -19,13 +19,18 @@ namespace VeterinarskaStanica.Services
 			CreateMap<Database.Uloge, Model.Uloge>();
 			CreateMap<Database.Usluge, Model.Usluge>();
 			CreateMap<Database.VrsteUsluga, Model.VrsteUsluga>();
+			CreateMap<Database.Zaposlenici, Model.Zaposlenici>();
+			CreateMap<Database.RadnaMjesta, Model.RadnaMjesta>();
 			CreateMap<ProizvodiInsertRequest, Database.Proizvodi>();
 			CreateMap<ProizvodiUpdateRequest, Database.Proizvodi>();
 			CreateMap<UslugeInsertRequest, Database.Usluge>();
 			CreateMap<UslugeUpdateRequest, Database.Usluge>();
+			CreateMap<ZaposleniciInsertRequest, Database.Zaposlenici>();
+			CreateMap<ZaposleniciUpdateRequest, Database.Zaposlenici>();
 			CreateMap<JediniceMjereUpsertRequest, Database.JediniceMjere>();
 			CreateMap<VrstaProizvodaUpsertRequest, Database.VrsteProizvodum>();
 			CreateMap<VrsteUslugaUpsertRequest, Database.VrsteUsluga>();
+			CreateMap<RadnaMjestaUpsertRequest, Database.RadnaMjesta>();
 			CreateMap<KorisniciInsertRequest, Database.Korisnici>();
 			CreateMap<KorisniciUpdateRequest, Database.Korisnici>();
 			CreateMap<Database.Narudzbe, Model.Narudzbe>();

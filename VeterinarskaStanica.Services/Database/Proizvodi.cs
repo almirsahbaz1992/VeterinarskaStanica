@@ -31,9 +31,4 @@ public partial class Proizvodi
     public virtual ICollection<NarudzbaStavke> NarudzbaStavkes { get; set; } = new List<NarudzbaStavke>();
 
     public virtual VrsteProizvodum Vrsta { get; set; } = null!;
-
-	public static implicit operator Proizvodi(Usluge v)
-	{
-		throw new NotImplementedException();
-	}
 }

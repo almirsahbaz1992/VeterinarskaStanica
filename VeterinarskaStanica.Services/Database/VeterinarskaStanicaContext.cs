@@ -39,6 +39,10 @@ public partial class VeterinarskaStanicaContext : DbContext
 
 	public virtual DbSet<VrsteUsluga> VrsteUslugas { get; set; }
 
+	public virtual DbSet<Zaposlenici> Zaposlenici { get; set; }
+
+	public virtual DbSet<RadnaMjesta> RadnaMjesta { get; set; }
+
 	//    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 	//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
 	//        => optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=test123; user=sa; password=QWEasd123!; TrustServerCertificate=true");
@@ -243,6 +247,33 @@ public partial class VeterinarskaStanicaContext : DbContext
 			entity.HasKey(e => e.VrstaId);
 
 			entity.Property(e => e.VrstaId).HasColumnName("VrstaID");
+			entity.Property(e => e.Naziv).HasMaxLength(50);
+		});
+
+		modelBuilder.Entity<Zaposlenici>(entity =>
+		{
+			entity.HasKey(e => e.ZaposlenikID);
+
+			entity.Property(e => e.ZaposlenikID).HasColumnName("ZaposlenikID");
+			entity.Property(e => e.Ime).HasMaxLength(50);
+			entity.Property(e => e.Prezime).HasMaxLength(50);
+			entity.Property(e => e.RadnoMjestoId).HasColumnName("RadnoMjestoID");
+			entity.Property(e => e.DatumZaposlenja).HasColumnType("datetime");
+			entity.Property(e => e.Plata).HasColumnType("decimal(18, 2)");
+
+			entity.HasOne(d => d.RadnaMjesta).WithMany(p => p.Zaposlenicis)
+			   .HasForeignKey(d => d.RadnoMjestoId)
+			   .OnDelete(DeleteBehavior.ClientSetNull)
+			   .HasConstraintName("FK_Zaposlenici_RadnaMjesta");
+		});
+
+		modelBuilder.Entity<RadnaMjesta>(entity =>
+		{
+			entity.HasKey(e => e.RadnaMjestaId);
+
+			entity.ToTable("RadnaMjesta");
+
+			entity.Property(e => e.RadnaMjestaId).HasColumnName("RadnaMjestaID");
 			entity.Property(e => e.Naziv).HasMaxLength(50);
 		});
 

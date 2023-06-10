@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace VeterinarskaStanica.Services.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -62,6 +62,19 @@ namespace VeterinarskaStanica.Services.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Kupci", x => x.KupacID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "RadnaMjesta",
+                columns: table => new
+                {
+                    RadnaMjestaID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Naziv = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RadnaMjesta", x => x.RadnaMjestaID);
                 });
 
             migrationBuilder.CreateTable(
@@ -124,6 +137,28 @@ namespace VeterinarskaStanica.Services.Migrations
                         column: x => x.KupacID,
                         principalTable: "Kupci",
                         principalColumn: "KupacID");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Zaposlenici",
+                columns: table => new
+                {
+                    ZaposlenikID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Ime = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Prezime = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    RadnoMjestoID = table.Column<int>(type: "int", nullable: false),
+                    DatumZaposlenja = table.Column<DateTime>(type: "datetime", nullable: false),
+                    Plata = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Zaposlenici", x => x.ZaposlenikID);
+                    table.ForeignKey(
+                        name: "FK_Zaposlenici_RadnaMjesta",
+                        column: x => x.RadnoMjestoID,
+                        principalTable: "RadnaMjesta",
+                        principalColumn: "RadnaMjestaID");
                 });
 
             migrationBuilder.CreateTable(
@@ -306,6 +341,11 @@ namespace VeterinarskaStanica.Services.Migrations
                 name: "IX_Usluge_VrstaID",
                 table: "Usluge",
                 column: "VrstaID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Zaposlenici_RadnoMjestoID",
+                table: "Zaposlenici",
+                column: "RadnoMjestoID");
         }
 
         /// <inheritdoc />
@@ -316,6 +356,9 @@ namespace VeterinarskaStanica.Services.Migrations
 
             migrationBuilder.DropTable(
                 name: "NarudzbaStavke");
+
+            migrationBuilder.DropTable(
+                name: "Zaposlenici");
 
             migrationBuilder.DropTable(
                 name: "Korisnici");
@@ -331,6 +374,9 @@ namespace VeterinarskaStanica.Services.Migrations
 
             migrationBuilder.DropTable(
                 name: "Usluge");
+
+            migrationBuilder.DropTable(
+                name: "RadnaMjesta");
 
             migrationBuilder.DropTable(
                 name: "Kupci");
