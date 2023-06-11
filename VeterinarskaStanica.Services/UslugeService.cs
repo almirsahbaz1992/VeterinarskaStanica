@@ -20,13 +20,15 @@ namespace VeterinarskaStanica.Services
 		public override IQueryable<Usluge> AddFilter(IQueryable<Usluge> query, UslugeSearchObject search = null)
 		{
 			var filteredQuery = base.AddFilter(query, search);
-			if (!string.IsNullOrEmpty(search?.Naziv))
+			if (!string.IsNullOrWhiteSpace(search?.Naziv))
 			{
-				filteredQuery = filteredQuery.Where(x => x.Naziv == search.Naziv);
+				filteredQuery = filteredQuery.Where(x => x.Naziv.Contains(search.Naziv)
+				|| x.Naziv.Contains(search.Naziv));
 			}
-			if (search?.UslugaID.HasValue == true)
+			if (!string.IsNullOrWhiteSpace(search?.Sifra))
 			{
-				filteredQuery = filteredQuery.Where(x => x.UslugaId == search.UslugaID);
+				filteredQuery = filteredQuery.Where(x => x.Sifra.Contains(search.Sifra)
+				|| x.Sifra.Contains(search.Sifra));
 			}
 			return filteredQuery;
 		}

@@ -67,6 +67,9 @@ namespace VeterinarskaStanica.WinUI
 						Cijena = Decimal.Parse(txtCijena.Text),
 						Slika = slika,
 						SlikaThumb = thumbnailSlika,
+						Status = true,
+						VrstaId = vrsteList.VrstaId,
+						JedinicaMjereId = jediniceMjereList.JedinicaMjereId
 					};
 					_model = await ProizvodiService.Put<Proizvodi>(_model.ProizvodId, updateRequest);
 					MessageBox.Show("Uspješno ste ažurirali podatke o proizvodu!");
@@ -86,6 +89,7 @@ namespace VeterinarskaStanica.WinUI
 			{
 				cbVrste.SelectedItem = _model.Status.GetValueOrDefault(false);
 				cbJediniceMjere.SelectedItem = _model.Status.GetValueOrDefault(false);
+				txtSifra.Text = _model.Sifra;
 			}
 		}
 

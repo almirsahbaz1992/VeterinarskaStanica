@@ -30,5 +30,12 @@ namespace VeterinarskaStanica.WinUI
 			var list = await ZaposleniciService.Get<List<Zaposlenici>>(searchObject);
 			dgZaposlenici.DataSource = list;
 		}
+
+		private void dgZaposlenici_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+		{
+			var item = dgZaposlenici.SelectedRows[0].DataBoundItem as Zaposlenici;
+			frmZaposlenici frm = new frmZaposlenici(item);
+			frm.ShowDialog();
+		}
 	}
 }

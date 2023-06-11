@@ -93,8 +93,10 @@
 			dgZaposlenici.Name = "dgZaposlenici";
 			dgZaposlenici.RowHeadersWidth = 51;
 			dgZaposlenici.RowTemplate.Height = 29;
+			dgZaposlenici.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 			dgZaposlenici.Size = new Size(765, 331);
 			dgZaposlenici.TabIndex = 5;
+			dgZaposlenici.CellContentDoubleClick += dgZaposlenici_CellContentDoubleClick;
 			// 
 			// Ime
 			// 

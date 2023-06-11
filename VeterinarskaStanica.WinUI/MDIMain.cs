@@ -147,5 +147,23 @@ namespace VeterinarskaStanica.WinUI
 
 			frm.Show();
 		}
+
+		private void pretragaProizvodaToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			frmProductSearch frm = new frmProductSearch();
+			frm.MdiParent = this;
+			frm.WindowState = FormWindowState.Maximized;
+
+			frm.Show();
+		}
+
+		private void pretragaUslugaToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			frmUslugeSearch frm = new frmUslugeSearch();
+			frm.MdiParent = this;
+			frm.WindowState = FormWindowState.Maximized;
+
+			frm.Show();
+		}
 	}
 }

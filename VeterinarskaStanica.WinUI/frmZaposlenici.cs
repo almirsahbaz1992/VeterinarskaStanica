@@ -118,6 +118,12 @@ namespace VeterinarskaStanica.WinUI
 		private async void frmZaposlenici_Load(object sender, EventArgs e)
 		{
 			await LoadRadnaMjesta();
+			if (_model != null)
+			{
+				txtIme.Text = _model.Ime;
+				dtDatum.Value = _model.DatumZaposlenja;
+				
+			}
 		}
 		private async Task LoadRadnaMjesta()
 		{
