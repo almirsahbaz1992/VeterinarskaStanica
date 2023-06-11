@@ -73,7 +73,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       child: Text(
-        "Products",
+        "Proizvodi",
         style: TextStyle(
             color: Colors.grey, fontSize: 40, fontWeight: FontWeight.w600),
       ),
@@ -95,7 +95,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
                 });
               },
               decoration: InputDecoration(
-                  hintText: "Search",
+                  hintText: "Pretraga",
                   prefixIcon: Icon(Icons.search),
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),

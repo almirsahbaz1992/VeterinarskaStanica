@@ -25,7 +25,7 @@ void main() => runApp(MultiProvider(
           primaryColor: Colors.deepPurple,
           textButtonTheme: TextButtonThemeData(
               style: TextButton.styleFrom(
-                  primary: Colors.deepPurple,
+                  foregroundColor: Colors.deepPurple,
                   textStyle: const TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
@@ -70,6 +70,9 @@ class HomePage extends StatelessWidget {
     _userProvider = Provider.of<UserProvider>(context, listen: false);
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Veterinarska stanica"),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -77,7 +80,7 @@ class HomePage extends StatelessWidget {
               height: 400,
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("assets/images/background.png"),
+                      image: AssetImage("assets/images/index.png"),
                       fit: BoxFit.fill)),
               child: Stack(children: [
                 Positioned(
@@ -85,31 +88,13 @@ class HomePage extends StatelessWidget {
                     top: 0,
                     width: 80,
                     height: 120,
-                    child: Container(
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                      image: AssetImage("assets/images/light-1.png"),
-                    )))),
+                    child: Container()),
                 Positioned(
                     right: 40,
                     top: 0,
                     width: 80,
                     height: 120,
-                    child: Container(
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                      image: AssetImage("assets/images/clock.png"),
-                    )))),
-                Container(
-                  child: Center(
-                      child: Text(
-                    "Login",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 40,
-                        fontWeight: FontWeight.bold),
-                  )),
-                )
+                    child: Container()),
               ]),
             ),
             Padding(
@@ -127,7 +112,7 @@ class HomePage extends StatelessWidget {
                       controller: _usernameController,
                       decoration: InputDecoration(
                           border: InputBorder.none,
-                          hintText: "Email or phone",
+                          hintText: "Korisničko ime",
                           hintStyle: TextStyle(color: Colors.grey[400])),
                     ),
                   ),
@@ -135,9 +120,10 @@ class HomePage extends StatelessWidget {
                     padding: EdgeInsets.all(8),
                     child: TextField(
                       controller: _passwordController,
+                      obscureText: true,
                       decoration: InputDecoration(
                           border: InputBorder.none,
-                          hintText: "Pasword",
+                          hintText: "Lozinka",
                           hintStyle: TextStyle(color: Colors.grey[400])),
                     ),
                   ),
@@ -181,13 +167,13 @@ class HomePage extends StatelessWidget {
                             ));
                   }
                 },
-                child: Center(child: Text("Login")),
+                child: Center(child: Text("Pristup sistemu")),
               ),
             ),
             SizedBox(
               height: 40,
             ),
-            Text("Forgot password?"),
+            Text("Zaboravljena lozinka?"),
             SizedBox(
               height: 40,
             ),

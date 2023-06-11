@@ -45,7 +45,7 @@ class _MasterScreenWidgetState extends State<MasterScreenWidget> {
             label: 'Cart',
           ),
         ],
-        selectedItemColor: Colors.amber[800],
+        selectedItemColor: Colors.blue[800],
         currentIndex: currentIndex,
         onTap: _onItemTapped,
       ),
