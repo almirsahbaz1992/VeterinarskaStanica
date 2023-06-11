@@ -14,7 +14,7 @@ namespace VeterinarskaStanica.Services.Database
 		{
 			modelBuilder.Entity<Uloge>().HasData(new Uloge { UlogaId = 1, Naziv = "Administrator", });
 			modelBuilder.Entity<Uloge>().HasData(new Uloge { UlogaId = 2, Naziv = "Menadžer", });
-			modelBuilder.Entity<Uloge>().HasData(new Uloge { UlogaId = 2, Naziv = "Korisnik", });
+			modelBuilder.Entity<Uloge>().HasData(new Uloge { UlogaId = 3, Naziv = "Korisnik", });
 
 			//u:admin p:admin
 			modelBuilder.Entity<Korisnici>().HasData(new Korisnici
