@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 using System.Text;
 
 namespace VeterinarskaStanica.Model
@@ -15,5 +17,7 @@ namespace VeterinarskaStanica.Model
 		public DateTime DatumZaposlenja { get; set; }
 
 		public float Plata { get; set; }
+
+		public virtual RadnaMjesta RadnaMjesta { get; set; }
 	}
 }

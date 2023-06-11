@@ -37,11 +37,12 @@
 			unosNovogProizvodaToolStripMenuItem = new ToolStripMenuItem();
 			uToolStripMenuItem = new ToolStripMenuItem();
 			unosNoveUslugeToolStripMenuItem = new ToolStripMenuItem();
+			zaposleniciToolStripMenuItem = new ToolStripMenuItem();
+			unosNovogZaposlenikaToolStripMenuItem = new ToolStripMenuItem();
 			statusStrip = new StatusStrip();
 			toolStripStatusLabel = new ToolStripStatusLabel();
 			toolTip = new ToolTip(components);
-			zaposleniciToolStripMenuItem = new ToolStripMenuItem();
-			unosNovogZaposlenikaToolStripMenuItem = new ToolStripMenuItem();
+			pretragaZaposlenikaToolStripMenuItem = new ToolStripMenuItem();
 			menuStrip.SuspendLayout();
 			statusStrip.SuspendLayout();
 			SuspendLayout();
@@ -102,9 +103,23 @@
 			// unosNoveUslugeToolStripMenuItem
 			// 
 			unosNoveUslugeToolStripMenuItem.Name = "unosNoveUslugeToolStripMenuItem";
-			unosNoveUslugeToolStripMenuItem.Size = new Size(224, 26);
+			unosNoveUslugeToolStripMenuItem.Size = new Size(208, 26);
 			unosNoveUslugeToolStripMenuItem.Text = "Unos nove usluge";
 			unosNoveUslugeToolStripMenuItem.Click += unosNoveUslugeToolStripMenuItem_Click;
+			// 
+			// zaposleniciToolStripMenuItem
+			// 
+			zaposleniciToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { unosNovogZaposlenikaToolStripMenuItem, pretragaZaposlenikaToolStripMenuItem });
+			zaposleniciToolStripMenuItem.Name = "zaposleniciToolStripMenuItem";
+			zaposleniciToolStripMenuItem.Size = new Size(99, 24);
+			zaposleniciToolStripMenuItem.Text = "Zaposlenici";
+			// 
+			// unosNovogZaposlenikaToolStripMenuItem
+			// 
+			unosNovogZaposlenikaToolStripMenuItem.Name = "unosNovogZaposlenikaToolStripMenuItem";
+			unosNovogZaposlenikaToolStripMenuItem.Size = new Size(253, 26);
+			unosNovogZaposlenikaToolStripMenuItem.Text = "Unos novog zaposlenika";
+			unosNovogZaposlenikaToolStripMenuItem.Click += unosNovogZaposlenikaToolStripMenuItem_Click;
 			// 
 			// statusStrip
 			// 
@@ -123,19 +138,12 @@
 			toolStripStatusLabel.Size = new Size(49, 20);
 			toolStripStatusLabel.Text = "Status";
 			// 
-			// zaposleniciToolStripMenuItem
+			// pretragaZaposlenikaToolStripMenuItem
 			// 
-			zaposleniciToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { unosNovogZaposlenikaToolStripMenuItem });
-			zaposleniciToolStripMenuItem.Name = "zaposleniciToolStripMenuItem";
-			zaposleniciToolStripMenuItem.Size = new Size(99, 24);
-			zaposleniciToolStripMenuItem.Text = "Zaposlenici";
-			// 
-			// unosNovogZaposlenikaToolStripMenuItem
-			// 
-			unosNovogZaposlenikaToolStripMenuItem.Name = "unosNovogZaposlenikaToolStripMenuItem";
-			unosNovogZaposlenikaToolStripMenuItem.Size = new Size(253, 26);
-			unosNovogZaposlenikaToolStripMenuItem.Text = "Unos novog zaposlenika";
-			unosNovogZaposlenikaToolStripMenuItem.Click += unosNovogZaposlenikaToolStripMenuItem_Click;
+			pretragaZaposlenikaToolStripMenuItem.Name = "pretragaZaposlenikaToolStripMenuItem";
+			pretragaZaposlenikaToolStripMenuItem.Size = new Size(253, 26);
+			pretragaZaposlenikaToolStripMenuItem.Text = "Pretraga zaposlenika";
+			pretragaZaposlenikaToolStripMenuItem.Click += pretragaZaposlenikaToolStripMenuItem_Click;
 			// 
 			// MDIMain
 			// 
@@ -172,6 +180,7 @@
 		private ToolStripMenuItem unosNoveUslugeToolStripMenuItem;
 		private ToolStripMenuItem zaposleniciToolStripMenuItem;
 		private ToolStripMenuItem unosNovogZaposlenikaToolStripMenuItem;
+		private ToolStripMenuItem pretragaZaposlenikaToolStripMenuItem;
 	}
 }
 

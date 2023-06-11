@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VeterinarskaStanica.Services.Database;
 
@@ -11,9 +12,11 @@ using VeterinarskaStanica.Services.Database;
 namespace VeterinarskaStanica.Services.Migrations
 {
     [DbContext(typeof(VeterinarskaStanicaContext))]
-    partial class VeterinarskaStanicaContextModelSnapshot : ModelSnapshot
+    [Migration("20230611081010_ZaposleniciRadnaMjesta")]
+    partial class ZaposleniciRadnaMjesta
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

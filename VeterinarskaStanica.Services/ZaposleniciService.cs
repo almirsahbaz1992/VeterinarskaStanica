@@ -19,13 +19,15 @@ namespace VeterinarskaStanica.Services
 		public override IQueryable<Zaposlenici> AddFilter(IQueryable<Zaposlenici> query, ZaposleniciSearchObject search = null)
 		{
 			var filteredQuery = base.AddFilter(query, search);
-			if (!string.IsNullOrEmpty(search?.Ime))
+			if (!string.IsNullOrWhiteSpace(search?.Ime))
 			{
-				filteredQuery = filteredQuery.Where(x => x.Ime == search.Ime);
+				filteredQuery = filteredQuery.Where(x => x.Ime.Contains(search.Ime)
+				|| x.Ime.Contains(search.Ime));
 			}
-			if (search?.ZaposlenikID.HasValue == true)
+			if (!string.IsNullOrWhiteSpace(search?.Prezime))
 			{
-				filteredQuery = filteredQuery.Where(x => x.ZaposlenikID == search.ZaposlenikID);
+				filteredQuery = filteredQuery.Where(x => x.Prezime.Contains(search.Prezime)
+				|| x.Prezime.Contains(search.Prezime));
 			}
 			return filteredQuery;
 		}

@@ -43,6 +43,8 @@ public partial class VeterinarskaStanicaContext : DbContext
 
 	public virtual DbSet<RadnaMjesta> RadnaMjesta { get; set; }
 
+	public virtual DbSet<ZaposleniciRadnaMjesta> ZaposleniciRadnaMjesta { get; set; }
+
 	//    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 	//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
 	//        => optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=test123; user=sa; password=QWEasd123!; TrustServerCertificate=true");
@@ -275,6 +277,27 @@ public partial class VeterinarskaStanicaContext : DbContext
 
 			entity.Property(e => e.RadnaMjestaId).HasColumnName("RadnaMjestaID");
 			entity.Property(e => e.Naziv).HasMaxLength(50);
+		});
+
+		modelBuilder.Entity<ZaposleniciRadnaMjesta>(entity =>
+		{
+			entity.HasKey(e => e.ZaposlenikRadnoMjestoId);
+
+			entity.ToTable("ZaposleniciRadnaMjesta");
+
+			entity.Property(e => e.ZaposlenikRadnoMjestoId).HasColumnName("ZaposlenikRadnoMjestoID");
+			entity.Property(e => e.ZaposlenikId).HasColumnName("ZaposlenikID");
+			entity.Property(e => e.RadnoMjestoId).HasColumnName("RadnoMjestoID");
+
+			entity.HasOne(d => d.Zaposlenik).WithMany(p => p.ZaposleniciRadnaMjestas)
+				.HasForeignKey(d => d.ZaposlenikId)
+				.OnDelete(DeleteBehavior.ClientSetNull)
+				.HasConstraintName("FK_ZaposleniciRadnaMjesta_Zaposlenik");
+
+			entity.HasOne(d => d.RadnoMjesto).WithMany(p => p.ZaposleniciRadnaMjestas)
+				.HasForeignKey(d => d.RadnoMjestoId)
+				.OnDelete(DeleteBehavior.ClientSetNull)
+				.HasConstraintName("FK_ZaposleniciRadnaMjesta_RadnoMjesto");
 		});
 
 		OnModelCreatingPartial(modelBuilder);

@@ -32,6 +32,9 @@
 			dgvKorisnici = new DataGridView();
 			Ime = new DataGridViewTextBoxColumn();
 			Prezime = new DataGridViewTextBoxColumn();
+			KorisnickoIme = new DataGridViewTextBoxColumn();
+			Email = new DataGridViewTextBoxColumn();
+			Telefon = new DataGridViewTextBoxColumn();
 			RoleNames = new DataGridViewTextBoxColumn();
 			Status = new DataGridViewCheckBoxColumn();
 			txtUsername = new TextBox();
@@ -53,8 +56,9 @@
 			// 
 			// dgvKorisnici
 			// 
+			dgvKorisnici.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 			dgvKorisnici.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dgvKorisnici.Columns.AddRange(new DataGridViewColumn[] { Ime, Prezime, RoleNames, Status });
+			dgvKorisnici.Columns.AddRange(new DataGridViewColumn[] { Ime, Prezime, KorisnickoIme, Email, Telefon, RoleNames, Status });
 			dgvKorisnici.Location = new Point(19, 74);
 			dgvKorisnici.Name = "dgvKorisnici";
 			dgvKorisnici.RowHeadersWidth = 51;
@@ -70,7 +74,6 @@
 			Ime.HeaderText = "Ime korisnika";
 			Ime.MinimumWidth = 6;
 			Ime.Name = "Ime";
-			Ime.Width = 125;
 			// 
 			// Prezime
 			// 
@@ -78,7 +81,27 @@
 			Prezime.HeaderText = "Prezime korisnika";
 			Prezime.MinimumWidth = 6;
 			Prezime.Name = "Prezime";
-			Prezime.Width = 125;
+			// 
+			// KorisnickoIme
+			// 
+			KorisnickoIme.DataPropertyName = "KorisnickoIme";
+			KorisnickoIme.HeaderText = "Korisničko ime";
+			KorisnickoIme.MinimumWidth = 6;
+			KorisnickoIme.Name = "KorisnickoIme";
+			// 
+			// Email
+			// 
+			Email.DataPropertyName = "Email";
+			Email.HeaderText = "E-mail";
+			Email.MinimumWidth = 6;
+			Email.Name = "Email";
+			// 
+			// Telefon
+			// 
+			Telefon.DataPropertyName = "Telefon";
+			Telefon.HeaderText = "Telefon";
+			Telefon.MinimumWidth = 6;
+			Telefon.Name = "Telefon";
 			// 
 			// RoleNames
 			// 
@@ -86,7 +109,6 @@
 			RoleNames.HeaderText = "Uloga korisnika";
 			RoleNames.MinimumWidth = 6;
 			RoleNames.Name = "RoleNames";
-			RoleNames.Width = 125;
 			// 
 			// Status
 			// 
@@ -94,7 +116,6 @@
 			Status.HeaderText = "Status";
 			Status.MinimumWidth = 6;
 			Status.Name = "Status";
-			Status.Width = 125;
 			// 
 			// txtUsername
 			// 
@@ -155,6 +176,9 @@
 		private Label lblName;
 		private DataGridViewTextBoxColumn Ime;
 		private DataGridViewTextBoxColumn Prezime;
+		private DataGridViewTextBoxColumn KorisnickoIme;
+		private DataGridViewTextBoxColumn Email;
+		private DataGridViewTextBoxColumn Telefon;
 		private DataGridViewTextBoxColumn RoleNames;
 		private DataGridViewCheckBoxColumn Status;
 	}

@@ -138,5 +138,14 @@ namespace VeterinarskaStanica.WinUI
 
 			frm.Show();
 		}
+
+		private void pretragaZaposlenikaToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			frmZaposleniciSearch frm = new frmZaposleniciSearch();
+			frm.MdiParent = this;
+			frm.WindowState = FormWindowState.Maximized;
+
+			frm.Show();
+		}
 	}
 }
