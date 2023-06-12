@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VeterinarskaStanica.Service
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VeterinarskaStanica.Model", "..\VeterinarskaStanica.Model\VeterinarskaStanica.Model.csproj", "{157BB86C-CDBF-466D-B372-75233BB0828A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VeterinarskaStanica.WinUI", "..\VeterinarskaStanica.WinUI\VeterinarskaStanica.WinUI.csproj", "{69150BDF-9D77-4178-A651-C7F97CCC5690}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VeterinarskaStanica.WinUI", "..\VeterinarskaStanica.WinUI\VeterinarskaStanica.WinUI.csproj", "{69150BDF-9D77-4178-A651-C7F97CCC5690}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
