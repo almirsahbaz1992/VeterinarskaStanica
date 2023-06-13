@@ -31,8 +31,6 @@ namespace VeterinarskaStanica.Services.Database
 
 		public virtual JediniceMjere JedinicaMjere { get; set; } = null!;
 
-		public virtual ICollection<NarudzbaStavke> NarudzbaStavkes { get; set; } = new List<NarudzbaStavke>();
-
 		public virtual VrsteUsluga Usluga { get; set; } = null!;
 	}
 }

@@ -25,7 +25,7 @@ namespace VeterinarskaStanica.WinUI.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:5192/")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://localhost:7172/")]
         public string ApiURL {
             get {
                 return ((string)(this["ApiURL"]));

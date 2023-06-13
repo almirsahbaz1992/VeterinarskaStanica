@@ -29,7 +29,7 @@ public partial class Proizvodi
 	public string PaymentId { get; set; } = null!;
 	public virtual JediniceMjere JedinicaMjere { get; set; } = null!;
 
-    public virtual ICollection<NarudzbaStavke> NarudzbaStavkes { get; set; } = new List<NarudzbaStavke>();
+	public virtual ICollection<Narudzbe> Narudzbes { get; set; } = new List<Narudzbe>();
 
-    public virtual VrsteProizvodum Vrsta { get; set; } = null!;
+	public virtual VrsteProizvodum Vrsta { get; set; } = null!;
 }

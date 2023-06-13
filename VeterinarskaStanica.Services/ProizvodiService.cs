@@ -88,29 +88,7 @@ namespace VeterinarskaStanica.Services
 				{
 					mlContext = new MLContext();
 
-					var tmpData = Context.Narudzbes.Include("NarudzbaStavkes").ToList();
-
 					var data = new List<ProductEntry>();
-
-					foreach (var x in tmpData)
-					{
-						if (x.NarudzbaStavkes.Count > 1)
-						{
-							var distinctItemId = x.NarudzbaStavkes.Select(y => y.ProizvodId).ToList();
-							distinctItemId.ForEach(y =>
-							{
-								var releatedItems = x.NarudzbaStavkes.Where(z => z.ProizvodId != y);
-								foreach (var z in releatedItems)
-								{
-									data.Add(new ProductEntry()
-									{
-										ProductID = (uint)y,
-										CoPurchaseProductID = (uint)z.ProizvodId,
-									});
-								}
-							});
-						}
-					}
 
 					var traindata = mlContext.Data.LoadFromEnumerable(data);
 

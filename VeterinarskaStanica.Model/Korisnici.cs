@@ -22,7 +22,7 @@ namespace VeterinarskaStanica.Model
 		public bool? Status { get; set; }
 
 		public virtual ICollection<KorisniciUloge> KorisniciUloges { get; set; } = new List<KorisniciUloge>();
-
+		public virtual ICollection<Narudzbe> Narudzbes { get; set; } = new List<Narudzbe>();
 		public string RoleNames => string.Join (", ", KorisniciUloges?.Select(x => x.Uloga?.Naziv)?.ToList());
 	}
 }

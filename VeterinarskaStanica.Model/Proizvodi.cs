@@ -28,5 +28,7 @@ namespace VeterinarskaStanica.Model
 		public string PaymentId { get; set; }
 
 		public string StateMachine { get; set; }
+
+		public virtual ICollection<Narudzbe> Narudzbes { get; set; } = new List<Narudzbe>();
 	}
 }

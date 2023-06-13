@@ -19,11 +19,6 @@ namespace VeterinarskaStanica.Services
 		public override IQueryable<Narudzbe> AddFilter(IQueryable<Narudzbe> query, NarudzbeSearchObject search = null)
 		{
 			var filteredQuery = base.AddFilter(query, search);
-			if (!string.IsNullOrWhiteSpace(search?.BrojNarudzbe))
-			{
-				filteredQuery = filteredQuery.Where(x => x.BrojNarudzbe.Contains(search.BrojNarudzbe)
-				|| x.BrojNarudzbe.Contains(search.BrojNarudzbe));
-			}
 			if (search?.Datum == null)
 			{
 				filteredQuery = filteredQuery.Where(x => x.Datum == search.Datum

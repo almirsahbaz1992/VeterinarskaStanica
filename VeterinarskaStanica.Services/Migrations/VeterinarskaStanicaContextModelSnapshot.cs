@@ -181,128 +181,6 @@ namespace VeterinarskaStanica.Services.Migrations
                         });
                 });
 
-            modelBuilder.Entity("VeterinarskaStanica.Services.Database.Kupci", b =>
-                {
-                    b.Property<int>("KupacId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("KupacID");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("KupacId"));
-
-                    b.Property<DateTime>("DatumRegistracije")
-                        .HasColumnType("datetime");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("Ime")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("KorisnickoIme")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("LozinkaHash")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("LozinkaSalt")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("Prezime")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
-
-                    b.HasKey("KupacId");
-
-                    b.ToTable("Kupci", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            KupacId = 1,
-                            DatumRegistracije = new DateTime(2023, 6, 13, 18, 42, 38, 344, DateTimeKind.Local).AddTicks(4123),
-                            Email = "kupac1@fit.ba",
-                            Ime = "Kupac 1",
-                            KorisnickoIme = "test",
-                            LozinkaHash = "IaYPuvlYcdz1aS3CQ638MoG2plk=",
-                            LozinkaSalt = "SBdrjnobBnNxVLMyUt0/CA==",
-                            Prezime = "Kupac 1",
-                            Status = true
-                        },
-                        new
-                        {
-                            KupacId = 2,
-                            DatumRegistracije = new DateTime(2023, 6, 13, 18, 42, 38, 344, DateTimeKind.Local).AddTicks(4136),
-                            Email = "kupac1@fit.ba",
-                            Ime = "Kupac 2",
-                            KorisnickoIme = "test1",
-                            LozinkaHash = "IaYPuvlYcdz1aS3CQ638MoG2plk=",
-                            LozinkaSalt = "SBdrjnobBnNxVLMyUt0/CA==",
-                            Prezime = "Kupac 2",
-                            Status = true
-                        },
-                        new
-                        {
-                            KupacId = 3,
-                            DatumRegistracije = new DateTime(2023, 6, 13, 18, 42, 38, 344, DateTimeKind.Local).AddTicks(4146),
-                            Email = "kupac1@fit.ba",
-                            Ime = "Kupac 3",
-                            KorisnickoIme = "test2",
-                            LozinkaHash = "IaYPuvlYcdz1aS3CQ638MoG2plk=",
-                            LozinkaSalt = "SBdrjnobBnNxVLMyUt0/CA==",
-                            Prezime = "Kupac 3",
-                            Status = true
-                        });
-                });
-
-            modelBuilder.Entity("VeterinarskaStanica.Services.Database.NarudzbaStavke", b =>
-                {
-                    b.Property<int>("NarudzbaStavkaId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("NarudzbaStavkaID");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("NarudzbaStavkaId"));
-
-                    b.Property<int>("Kolicina")
-                        .HasColumnType("int");
-
-                    b.Property<int>("NarudzbaId")
-                        .HasColumnType("int")
-                        .HasColumnName("NarudzbaID");
-
-                    b.Property<int>("ProizvodId")
-                        .HasColumnType("int")
-                        .HasColumnName("ProizvodID");
-
-                    b.Property<int?>("UslugeUslugaId")
-                        .HasColumnType("int");
-
-                    b.HasKey("NarudzbaStavkaId");
-
-                    b.HasIndex("NarudzbaId");
-
-                    b.HasIndex("ProizvodId");
-
-                    b.HasIndex("UslugeUslugaId");
-
-                    b.ToTable("NarudzbaStavke", (string)null);
-                });
-
             modelBuilder.Entity("VeterinarskaStanica.Services.Database.Narudzbe", b =>
                 {
                     b.Property<int>("NarudzbaId")
@@ -312,27 +190,26 @@ namespace VeterinarskaStanica.Services.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("NarudzbaId"));
 
-                    b.Property<string>("BrojNarudzbe")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
                     b.Property<DateTime>("Datum")
                         .HasColumnType("datetime");
 
-                    b.Property<int>("KupacId")
+                    b.Property<int>("KorisnikId")
                         .HasColumnType("int")
-                        .HasColumnName("KupacID");
+                        .HasColumnName("KorisnikID");
 
-                    b.Property<bool?>("Otkazano")
-                        .HasColumnType("bit");
+                    b.Property<int>("ProizvodId")
+                        .HasColumnType("int")
+                        .HasColumnName("ProizvodID");
 
                     b.Property<bool>("Status")
-                        .HasColumnType("bit");
+                        .HasColumnType("bit")
+                        .HasColumnName("Status");
 
                     b.HasKey("NarudzbaId");
 
-                    b.HasIndex("KupacId");
+                    b.HasIndex("KorisnikId");
+
+                    b.HasIndex("ProizvodId");
 
                     b.ToTable("Narudzbe", (string)null);
 
@@ -340,19 +217,17 @@ namespace VeterinarskaStanica.Services.Migrations
                         new
                         {
                             NarudzbaId = 1,
-                            BrojNarudzbe = "BR001",
-                            Datum = new DateTime(2023, 6, 13, 18, 42, 38, 344, DateTimeKind.Local).AddTicks(4254),
-                            KupacId = 1,
-                            Otkazano = false,
+                            Datum = new DateTime(2023, 6, 13, 22, 20, 39, 886, DateTimeKind.Local).AddTicks(2617),
+                            KorisnikId = 1,
+                            ProizvodId = 1,
                             Status = true
                         },
                         new
                         {
                             NarudzbaId = 2,
-                            BrojNarudzbe = "BR002",
-                            Datum = new DateTime(2023, 6, 13, 18, 42, 38, 344, DateTimeKind.Local).AddTicks(4266),
-                            KupacId = 1,
-                            Otkazano = true,
+                            Datum = new DateTime(2023, 6, 13, 22, 20, 39, 886, DateTimeKind.Local).AddTicks(2631),
+                            KorisnikId = 2,
+                            ProizvodId = 2,
                             Status = true
                         });
                 });
@@ -423,7 +298,7 @@ namespace VeterinarskaStanica.Services.Migrations
                     b.HasData(
                         new
                         {
-                            ProizvodId = 2,
+                            ProizvodId = 1,
                             Cijena = 120m,
                             JedinicaMjereId = 1,
                             Naziv = "Hrana za mačke",
@@ -437,7 +312,7 @@ namespace VeterinarskaStanica.Services.Migrations
                         },
                         new
                         {
-                            ProizvodId = 3,
+                            ProizvodId = 2,
                             Cijena = 1201m,
                             JedinicaMjereId = 1,
                             Naziv = "Lijek protiv krpelja",
@@ -728,19 +603,19 @@ namespace VeterinarskaStanica.Services.Migrations
                         new
                         {
                             ZaposlenikID = 1,
-                            DatumZaposlenja = new DateTime(2023, 6, 13, 18, 42, 38, 344, DateTimeKind.Local).AddTicks(4228),
-                            Ime = "Kupac 1",
+                            DatumZaposlenja = new DateTime(2023, 6, 13, 22, 20, 39, 886, DateTimeKind.Local).AddTicks(2593),
+                            Ime = "Zaposlenik 1",
                             Plata = 200m,
-                            Prezime = "Kupac 1",
+                            Prezime = "Zaposlenik 1",
                             RadnoMjestoId = 1
                         },
                         new
                         {
                             ZaposlenikID = 2,
-                            DatumZaposlenja = new DateTime(2023, 6, 13, 18, 42, 38, 344, DateTimeKind.Local).AddTicks(4242),
-                            Ime = "Kupac 2",
+                            DatumZaposlenja = new DateTime(2023, 6, 13, 22, 20, 39, 886, DateTimeKind.Local).AddTicks(2606),
+                            Ime = "Zaposlenik 2",
                             Plata = 1593m,
-                            Prezime = "Kupac 2",
+                            Prezime = "Zaposlenik 2",
                             RadnoMjestoId = 1
                         });
                 });
@@ -790,38 +665,23 @@ namespace VeterinarskaStanica.Services.Migrations
                     b.Navigation("Uloga");
                 });
 
-            modelBuilder.Entity("VeterinarskaStanica.Services.Database.NarudzbaStavke", b =>
-                {
-                    b.HasOne("VeterinarskaStanica.Services.Database.Narudzbe", "Narudzba")
-                        .WithMany("NarudzbaStavkes")
-                        .HasForeignKey("NarudzbaId")
-                        .IsRequired()
-                        .HasConstraintName("FK_NarudzbaStavke_Narudzbe");
-
-                    b.HasOne("VeterinarskaStanica.Services.Database.Proizvodi", "Proizvod")
-                        .WithMany("NarudzbaStavkes")
-                        .HasForeignKey("ProizvodId")
-                        .IsRequired()
-                        .HasConstraintName("FK_NarudzbaStavke_Proizvodi");
-
-                    b.HasOne("VeterinarskaStanica.Services.Database.Usluge", null)
-                        .WithMany("NarudzbaStavkes")
-                        .HasForeignKey("UslugeUslugaId");
-
-                    b.Navigation("Narudzba");
-
-                    b.Navigation("Proizvod");
-                });
-
             modelBuilder.Entity("VeterinarskaStanica.Services.Database.Narudzbe", b =>
                 {
-                    b.HasOne("VeterinarskaStanica.Services.Database.Kupci", "Kupac")
+                    b.HasOne("VeterinarskaStanica.Services.Database.Korisnici", "Korisnik")
                         .WithMany("Narudzbes")
-                        .HasForeignKey("KupacId")
+                        .HasForeignKey("KorisnikId")
                         .IsRequired()
-                        .HasConstraintName("FK_Narudzbe_Kupci");
+                        .HasConstraintName("FK_Narudzbe_Korisnici");
 
-                    b.Navigation("Kupac");
+                    b.HasOne("VeterinarskaStanica.Services.Database.Proizvodi", "Proizvod")
+                        .WithMany("Narudzbes")
+                        .HasForeignKey("ProizvodId")
+                        .IsRequired()
+                        .HasConstraintName("FK_Narudzbe_Proizvodi");
+
+                    b.Navigation("Korisnik");
+
+                    b.Navigation("Proizvod");
                 });
 
             modelBuilder.Entity("VeterinarskaStanica.Services.Database.Proizvodi", b =>
@@ -902,21 +762,13 @@ namespace VeterinarskaStanica.Services.Migrations
             modelBuilder.Entity("VeterinarskaStanica.Services.Database.Korisnici", b =>
                 {
                     b.Navigation("KorisniciUloges");
-                });
 
-            modelBuilder.Entity("VeterinarskaStanica.Services.Database.Kupci", b =>
-                {
                     b.Navigation("Narudzbes");
-                });
-
-            modelBuilder.Entity("VeterinarskaStanica.Services.Database.Narudzbe", b =>
-                {
-                    b.Navigation("NarudzbaStavkes");
                 });
 
             modelBuilder.Entity("VeterinarskaStanica.Services.Database.Proizvodi", b =>
                 {
-                    b.Navigation("NarudzbaStavkes");
+                    b.Navigation("Narudzbes");
                 });
 
             modelBuilder.Entity("VeterinarskaStanica.Services.Database.RadnaMjesta", b =>
@@ -929,11 +781,6 @@ namespace VeterinarskaStanica.Services.Migrations
             modelBuilder.Entity("VeterinarskaStanica.Services.Database.Uloge", b =>
                 {
                     b.Navigation("KorisniciUloges");
-                });
-
-            modelBuilder.Entity("VeterinarskaStanica.Services.Database.Usluge", b =>
-                {
-                    b.Navigation("NarudzbaStavkes");
                 });
 
             modelBuilder.Entity("VeterinarskaStanica.Services.Database.VrsteProizvodum", b =>

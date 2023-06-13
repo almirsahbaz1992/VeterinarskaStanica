@@ -19,5 +19,6 @@ namespace VeterinarskaStanica.Model.Request
 		public bool? Status { get; set; }
 
 		public List<int> UlogeIdList { get; set; } = new List<int> { };
+		public List<int> KorisniciIdList { get; set; } = new List<int> { };
 	}
 }
