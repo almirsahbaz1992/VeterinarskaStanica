@@ -13,6 +13,7 @@ namespace VeterinarskaStanica.Model.Request
 		public int VrstaId { get; set; }
 
 		public int JedinicaMjereId { get; set; }
+		public int RezervacijaId { get; set; }
 
 		public byte[] Slika { get; set; }
 

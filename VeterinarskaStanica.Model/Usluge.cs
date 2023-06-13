@@ -19,6 +19,8 @@ namespace VeterinarskaStanica.Model
 
 		public int JedinicaMjereId { get; set; }
 
+		public int RezervacijaId { get; set; }
+
 		public byte[] Slika { get; set; }
 
 		public byte[] SlikaThumb { get; set; }
@@ -27,5 +29,7 @@ namespace VeterinarskaStanica.Model
 		public string PaymentId { get; set; }
 
 		public string StateMachine { get; set; }
+
+		public virtual Rezervacije Rezervacija { get; set; }
 	}
 }

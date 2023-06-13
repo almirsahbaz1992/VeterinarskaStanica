@@ -4,11 +4,9 @@ using System.Text;
 
 namespace VeterinarskaStanica.Model.SearchObjects
 {
-	public class NarudzbeSearchObject : BaseSearchObject
+	public class RezervacijeSearchObject : BaseSearchObject
 	{
 		public DateTime Datum { get; set; }
-
-		public int Kolicina { get; set; }
-		public int? NarudzbaId { get; set; }
+		public int? RezervacijaId { get; set; }
 	}
 }

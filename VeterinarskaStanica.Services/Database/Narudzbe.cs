@@ -15,6 +15,8 @@ public partial class Narudzbe
 
     public bool Status { get; set; }
 
+	public int Kolicina { get; set; }
+
     public virtual Korisnici Korisnik { get; set; } = null!;
 
 	public virtual Proizvodi Proizvod { get; set; } = null!;

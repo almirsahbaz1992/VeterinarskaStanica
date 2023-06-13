@@ -47,6 +47,7 @@ builder.Services.AddTransient<IVrsteUslugaService, VrstaUslugaService>();
 builder.Services.AddTransient<IZaposleniciService, ZaposleniciService>();
 builder.Services.AddTransient<INarudzbeService, NarudzbeService>();
 builder.Services.AddTransient<IRadnaMjestaService, RadnaMjestaService>();
+builder.Services.AddTransient<IRezervacijeService, RezervacijeService>();
 builder.Services.AddTransient<IService<VeterinarskaStanica.Model.Uloge, BaseSearchObject>, BaseService<VeterinarskaStanica.Model.Uloge, Uloge, BaseSearchObject >>();
 //builder.Services.AddSingleton<IProizvodiService, ProizvodiService>();
 builder.Services.AddTransient<BaseState>();

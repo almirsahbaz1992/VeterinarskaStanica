@@ -1,0 +1,13 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace VeterinarskaStanica.Model.Request
+{
+	public class RezervacijeInsertRequest
+	{
+		public DateTime DatumRezervacije { get; set; }
+
+		public int UslugaId { get; set; }
+	}
+}

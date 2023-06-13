@@ -21,6 +21,7 @@ namespace VeterinarskaStanica.Services
 			CreateMap<Database.VrsteUsluga, Model.VrsteUsluga>();
 			CreateMap<Database.Zaposlenici, Model.Zaposlenici>();
 			CreateMap<Database.RadnaMjesta, Model.RadnaMjesta>();
+			CreateMap<Database.Rezervacije, Model.Rezervacije>();
 			CreateMap<ProizvodiInsertRequest, Database.Proizvodi>();
 			CreateMap<ProizvodiUpdateRequest, Database.Proizvodi>();
 			CreateMap<UslugeInsertRequest, Database.Usluge>();
@@ -36,6 +37,8 @@ namespace VeterinarskaStanica.Services
 			CreateMap<Database.Narudzbe, Model.Narudzbe>();
 			CreateMap<NarudzbaInsertRequest, Database.Narudzbe>();
 			CreateMap<NarudzbaUpdateRequest, Database.Narudzbe>();
+			CreateMap<RezervacijeInsertRequest, Database.Rezervacije>();
+			CreateMap<RezervacijeUpdateRequest, Database.Rezervacije>();
 		}
 	}
 }

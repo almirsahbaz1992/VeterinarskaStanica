@@ -39,6 +39,8 @@ public partial class VeterinarskaStanicaContext : DbContext
 
 	public virtual DbSet<RadnaMjesta> RadnaMjesta { get; set; }
 
+	public virtual DbSet<Rezervacije> Rezervacije { get; set; }
+
 	public virtual DbSet<ZaposleniciRadnaMjesta> ZaposleniciRadnaMjesta { get; set; }
 
     //    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -202,6 +204,11 @@ public partial class VeterinarskaStanicaContext : DbContext
 						   .HasForeignKey(d => d.VrstaId)
 						   .OnDelete(DeleteBehavior.ClientSetNull)
 						   .HasConstraintName("FK_Usluge_VrsteUsluga");
+
+			entity.HasOne(d => d.Rezervacija).WithMany(p => p.Usluge)
+            .HasForeignKey(d => d.RezervacijaId)
+            .OnDelete(DeleteBehavior.ClientSetNull)
+            .HasConstraintName("FK_Usluge_Rezervacije");
 		});
 
 		modelBuilder.Entity<VrsteProizvodum>(entity =>
@@ -266,6 +273,14 @@ public partial class VeterinarskaStanicaContext : DbContext
 				.HasForeignKey(d => d.RadnoMjestoId)
 				.OnDelete(DeleteBehavior.ClientSetNull)
 				.HasConstraintName("FK_ZaposleniciRadnaMjesta_RadnoMjesto");
+		});
+
+		modelBuilder.Entity<Rezervacije>(entity =>
+		{
+			entity.HasKey(e => e.RezervacijeId);
+
+			entity.Property(e => e.RezervacijeId).HasColumnName("RezervacijaID");
+			entity.Property(e => e.DatumRezervacije).HasColumnType("datetime");
 		});
 
 		OnModelCreatingPartial(modelBuilder);

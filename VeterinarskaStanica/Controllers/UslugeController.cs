@@ -10,11 +10,11 @@ namespace VeterinarskaStanica.Controllers
 		[Route("[controller]")]
 		public class UslugeController : BaseCRUDController<Model.Usluge, UslugeSearchObject, UslugeInsertRequest, UslugeUpdateRequest>
 		{
-			public IUslugeService ProizvodiService { get; set; }
-			public UslugeController(IUslugeService proizvodiService)
-				: base(proizvodiService)
+			public IUslugeService UslugeService { get; set; }
+			public UslugeController(IUslugeService uslugeService)
+				: base(uslugeService)
 			{
-				ProizvodiService = proizvodiService;
+				UslugeService = uslugeService;
 			}
 		}
 	}

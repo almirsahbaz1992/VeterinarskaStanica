@@ -10,7 +10,6 @@ namespace VeterinarskaStanica.Model.SearchObjects
 		public string Ime { get; set; }
 
 		public string Prezime { get; set; } 
-		public RadnaMjesta RadnoMjesto { get; set; }
 		public DateTime DatumZaposlenja { get; set; }
 
 		public float Plata { get; set; }

@@ -11,5 +11,7 @@ namespace VeterinarskaStanica.Model
 		public int ProizvodId { get; set; }
 		public DateTime Datum { get; set; }
 		public bool Status { get; set; }
+
+		public int Kolicina { get; set; }
 	}
 }
