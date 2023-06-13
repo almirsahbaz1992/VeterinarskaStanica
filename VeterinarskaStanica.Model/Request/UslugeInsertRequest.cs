@@ -21,6 +21,7 @@ namespace VeterinarskaStanica.Model.Request
 		public byte[] SlikaThumb { get; set; }
 
 		public bool? Status { get; set; }
+		public string PaymentId { get; set; }
 
 		public string StateMachine { get; set; }
 		public List<int> VrsteIdList { get; set; } = new List<int> { };

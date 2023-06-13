@@ -181,7 +181,9 @@ public partial class VeterinarskaStanicaContext : DbContext
             entity.Property(e => e.JedinicaMjereId).HasColumnName("JedinicaMjereID");
             entity.Property(e => e.Naziv).HasMaxLength(50);
             entity.Property(e => e.Sifra).HasMaxLength(20);
-            entity.Property(e => e.Status)
+			entity.Property(e => e.Opis).HasMaxLength(50);
+			entity.Property(e => e.PaymentId).HasMaxLength(50);
+			entity.Property(e => e.Status)
                 .IsRequired()
                 .HasDefaultValueSql("((1))");
             entity.Property(e => e.VrstaId).HasColumnName("VrstaID");
@@ -220,6 +222,7 @@ public partial class VeterinarskaStanicaContext : DbContext
 			entity.Property(e => e.JedinicaMjereId).HasColumnName("JedinicaMjereID");
 			entity.Property(e => e.Naziv).HasMaxLength(50);
 			entity.Property(e => e.Sifra).HasMaxLength(20);
+			entity.Property(e => e.PaymentId).HasMaxLength(50);
 			entity.Property(e => e.Status)
 				.IsRequired()
 				.HasDefaultValueSql("((1))");

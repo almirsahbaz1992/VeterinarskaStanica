@@ -19,5 +19,7 @@ namespace VeterinarskaStanica.Model.Request
 		public byte[] SlikaThumb { get; set; }
 
 		public bool? Status { get; set; }
+
+		public string Opis { get; set; }
 	}
 }

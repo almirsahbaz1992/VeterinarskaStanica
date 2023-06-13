@@ -9,7 +9,7 @@ using VeterinarskaStanica.Model.SearchObjects;
 
 namespace VeterinarskaStanica.Services
 {
-	public interface INarudzbeService : ICRUDService<Narudzbe, BaseSearchObject, NarudzbaInsertRequest, NarudzbaUpdateRequest>
+	public interface INarudzbeService : ICRUDService<VeterinarskaStanica.Model.Narudzbe, NarudzbeSearchObject, NarudzbaInsertRequest, NarudzbaUpdateRequest>
 	{
 
 	}

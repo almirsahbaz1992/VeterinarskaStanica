@@ -49,6 +49,7 @@ namespace VeterinarskaStanica.WinUI
 						Cijena = Decimal.Parse(txtCijena.Text),
 						Slika = slika,
 						SlikaThumb = thumbnailSlika,
+						PaymentId = "null",
 						VrstaId = vrsteList.VrstaId,
 						JedinicaMjereId = jediniceMjereList.JedinicaMjereId,
 						StateMachine = "draft"

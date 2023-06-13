@@ -53,6 +53,8 @@ namespace VeterinarskaStanica.WinUI
 						Cijena = Decimal.Parse(txtCijena.Text),
 						Slika = slika,
 						SlikaThumb = thumbnailSlika,
+						Opis = rtbOpis.Text,
+						PaymentId = "null",
 						VrstaId = vrsteList.VrstaId,
 						JedinicaMjereId = jediniceMjereList.JedinicaMjereId
 					};
@@ -67,6 +69,7 @@ namespace VeterinarskaStanica.WinUI
 						Cijena = Decimal.Parse(txtCijena.Text),
 						Slika = slika,
 						SlikaThumb = thumbnailSlika,
+						Opis = rtbOpis.Text,
 						Status = true,
 						VrstaId = vrsteList.VrstaId,
 						JedinicaMjereId = jediniceMjereList.JedinicaMjereId
@@ -183,6 +186,21 @@ namespace VeterinarskaStanica.WinUI
 			{
 				e.Cancel = false;
 				errorProvider3.SetError(txtCijena, "");
+			}
+		}
+
+		private void rtbOpis_Validating(object sender, CancelEventArgs e)
+		{
+			if (string.IsNullOrWhiteSpace(rtbOpis.Text))
+			{
+				e.Cancel = true;
+				rtbOpis.Focus();
+				errorProvider4.SetError(rtbOpis, "Polje opis proizvoda je obavezno!");
+			}
+			else
+			{
+				e.Cancel = false;
+				errorProvider4.SetError(rtbOpis, "");
 			}
 		}
 	}

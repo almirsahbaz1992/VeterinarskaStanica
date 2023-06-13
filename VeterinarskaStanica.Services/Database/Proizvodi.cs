@@ -13,7 +13,8 @@ public partial class Proizvodi
 
     public decimal Cijena { get; set; }
 
-    public int VrstaId { get; set; }
+	public string Opis { get; set; } = null!;
+	public int VrstaId { get; set; }
 
     public int JedinicaMjereId { get; set; }
 
@@ -25,8 +26,8 @@ public partial class Proizvodi
 
     public string? StateMachine { get; set; }
 
-
-    public virtual JediniceMjere JedinicaMjere { get; set; } = null!;
+	public string PaymentId { get; set; } = null!;
+	public virtual JediniceMjere JedinicaMjere { get; set; } = null!;
 
     public virtual ICollection<NarudzbaStavke> NarudzbaStavkes { get; set; } = new List<NarudzbaStavke>();
 

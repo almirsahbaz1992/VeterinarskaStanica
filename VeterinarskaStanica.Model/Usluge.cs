@@ -14,6 +14,7 @@ namespace VeterinarskaStanica.Model
 
 		public decimal Cijena { get; set; }
 
+		public string Opis { get; set; }
 		public int VrstaId { get; set; }
 
 		public int JedinicaMjereId { get; set; }
@@ -23,6 +24,7 @@ namespace VeterinarskaStanica.Model
 		public byte[] SlikaThumb { get; set; }
 
 		public bool? Status { get; set; }
+		public string PaymentId { get; set; }
 
 		public string StateMachine { get; set; }
 	}

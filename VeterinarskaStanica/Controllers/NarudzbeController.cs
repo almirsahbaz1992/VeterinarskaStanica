@@ -1,14 +1,19 @@
-﻿using VeterinarskaStanica.Model.Request;
+﻿using Microsoft.AspNetCore.Mvc;
+using VeterinarskaStanica.Model.Request;
 using VeterinarskaStanica.Model.SearchObjects;
 using VeterinarskaStanica.Services;
 
 namespace VeterinarskaStanica.Controllers
 {
-	public class NarudzbeController : BaseCRUDController<Model.Narudzbe, BaseSearchObject, NarudzbaInsertRequest, NarudzbaUpdateRequest>
+	[ApiController]
+	[Route("[controller]")]
+	public class NarudzbeController : BaseCRUDController<Model.Narudzbe, NarudzbeSearchObject, NarudzbaInsertRequest, NarudzbaUpdateRequest>
 	{
-		public NarudzbeController(INarudzbeService service)
-			: base(service)
+		public INarudzbeService NarudzbeService { get; set; }
+		public NarudzbeController(INarudzbeService narudzbeService)
+			: base(narudzbeService)
 		{
+			NarudzbeService = narudzbeService;
 		}
 	}
 }

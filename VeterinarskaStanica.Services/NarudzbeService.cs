@@ -10,36 +10,26 @@ using VeterinarskaStanica.Services.Database;
 
 namespace VeterinarskaStanica.Services
 {
-	public class NarudzbeService : BaseCRUDService<Model.Narudzbe, Database.Narudzbe, BaseSearchObject, NarudzbaInsertRequest, NarudzbaUpdateRequest>, INarudzbeService
+	public class NarudzbeService : BaseCRUDService<Model.Narudzbe, Database.Narudzbe, NarudzbeSearchObject, NarudzbaInsertRequest, NarudzbaUpdateRequest>, INarudzbeService
 	{
 		public NarudzbeService(VeterinarskaStanicaContext context, IMapper mapper) : base(context, mapper)
 		{
 		}
 
-		public override void BeforeInsert(NarudzbaInsertRequest insert, Narudzbe entity)
+		public override IQueryable<Narudzbe> AddFilter(IQueryable<Narudzbe> query, NarudzbeSearchObject search = null)
 		{
-			entity.KupacId = 1; //todo get from session
-			entity.Datum = DateTime.Now;
-			entity.BrojNarudzbe = (Context.Narudzbes.Count() + 1).ToString();
-			base.BeforeInsert(insert, entity);
-		}
-
-		public override Model.Narudzbe Insert(NarudzbaInsertRequest insert)
-		{
-			var result = base.Insert(insert);
-			foreach (var item in insert.Items)
+			var filteredQuery = base.AddFilter(query, search);
+			if (!string.IsNullOrWhiteSpace(search?.BrojNarudzbe))
 			{
-				//call context to store items
-				Database.NarudzbaStavke dbItem = new NarudzbaStavke();
-				dbItem.NarudzbaId = result.NarudzbaId;
-				dbItem.ProizvodId = item.ProizvodId;
-				dbItem.Kolicina = item.Kolicina;
-
-				Context.NarudzbaStavkes.Add(dbItem);
+				filteredQuery = filteredQuery.Where(x => x.BrojNarudzbe.Contains(search.BrojNarudzbe)
+				|| x.BrojNarudzbe.Contains(search.BrojNarudzbe));
 			}
-
-			Context.SaveChanges();
-			return result;
+			if (search?.Datum == null)
+			{
+				filteredQuery = filteredQuery.Where(x => x.Datum == search.Datum
+				|| x.Datum == search.Datum);
+			}
+			return filteredQuery;
 		}
 	}
 }

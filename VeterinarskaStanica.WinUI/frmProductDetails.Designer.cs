@@ -46,10 +46,14 @@
 			errorProvider1 = new ErrorProvider(components);
 			errorProvider2 = new ErrorProvider(components);
 			errorProvider3 = new ErrorProvider(components);
+			rtbOpis = new RichTextBox();
+			label6 = new Label();
+			errorProvider4 = new ErrorProvider(components);
 			((System.ComponentModel.ISupportInitialize)image).BeginInit();
 			((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
 			((System.ComponentModel.ISupportInitialize)errorProvider2).BeginInit();
 			((System.ComponentModel.ISupportInitialize)errorProvider3).BeginInit();
+			((System.ComponentModel.ISupportInitialize)errorProvider4).BeginInit();
 			SuspendLayout();
 			// 
 			// txtNaziv
@@ -94,7 +98,7 @@
 			// 
 			// btnSacuvaj
 			// 
-			btnSacuvaj.Location = new Point(244, 393);
+			btnSacuvaj.Location = new Point(244, 440);
 			btnSacuvaj.Name = "btnSacuvaj";
 			btnSacuvaj.Size = new Size(94, 29);
 			btnSacuvaj.TabIndex = 6;
@@ -182,11 +186,35 @@
 			// 
 			errorProvider3.ContainerControl = this;
 			// 
+			// rtbOpis
+			// 
+			rtbOpis.Location = new Point(154, 300);
+			rtbOpis.Name = "rtbOpis";
+			rtbOpis.Size = new Size(184, 120);
+			rtbOpis.TabIndex = 14;
+			rtbOpis.Text = "";
+			rtbOpis.Validating += rtbOpis_Validating;
+			// 
+			// label6
+			// 
+			label6.AutoSize = true;
+			label6.Location = new Point(12, 300);
+			label6.Name = "label6";
+			label6.Size = new Size(110, 20);
+			label6.TabIndex = 15;
+			label6.Text = "Opis proizvoda";
+			// 
+			// errorProvider4
+			// 
+			errorProvider4.ContainerControl = this;
+			// 
 			// frmProductDetails
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(800, 450);
+			ClientSize = new Size(800, 494);
+			Controls.Add(label6);
+			Controls.Add(rtbOpis);
 			Controls.Add(label5);
 			Controls.Add(label4);
 			Controls.Add(label3);
@@ -207,6 +235,7 @@
 			((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
 			((System.ComponentModel.ISupportInitialize)errorProvider2).EndInit();
 			((System.ComponentModel.ISupportInitialize)errorProvider3).EndInit();
+			((System.ComponentModel.ISupportInitialize)errorProvider4).EndInit();
 			ResumeLayout(false);
 			PerformLayout();
 		}
@@ -230,5 +259,8 @@
 		private ErrorProvider errorProvider1;
 		private ErrorProvider errorProvider2;
 		private ErrorProvider errorProvider3;
+		private Label label6;
+		private RichTextBox rtbOpis;
+		private ErrorProvider errorProvider4;
 	}
 }

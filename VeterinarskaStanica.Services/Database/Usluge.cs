@@ -15,7 +15,6 @@ namespace VeterinarskaStanica.Services.Database
 		public string Sifra { get; set; } = null!;
 
 		public decimal Cijena { get; set; }
-
 		public int VrstaId { get; set; }
 
 		public int JedinicaMjereId { get; set; }
@@ -27,6 +26,8 @@ namespace VeterinarskaStanica.Services.Database
 		public bool? Status { get; set; }
 
 		public string? StateMachine { get; set; }
+
+		public string PaymentId { get; set; } = null!;
 
 		public virtual JediniceMjere JedinicaMjere { get; set; } = null!;
 
