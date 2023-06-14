@@ -9,7 +9,8 @@ public partial class VeterinarskaStanicaContext : DbContext
 {
     public VeterinarskaStanicaContext()
     {
-    }
+		
+	}
 
     public VeterinarskaStanicaContext(DbContextOptions<VeterinarskaStanicaContext> options)
         : base(options)
@@ -25,7 +26,9 @@ public partial class VeterinarskaStanicaContext : DbContext
 
     public virtual DbSet<Narudzbe> Narudzbes { get; set; }
 
-    public virtual DbSet<Proizvodi> Proizvodis { get; set; }
+	public virtual DbSet<NarudzbaStavke> NarudzbaStavkes { get; set; }
+
+	public virtual DbSet<Proizvodi> Proizvodis { get; set; }
 
 
     public virtual DbSet<Uloge> Uloges { get; set; }
@@ -121,24 +124,37 @@ public partial class VeterinarskaStanicaContext : DbContext
             entity.ToTable("Narudzbe");
 
             entity.Property(e => e.NarudzbaId).HasColumnName("NarudzbaID");
-            entity.Property(e => e.Datum).HasColumnType("datetime");
+			entity.Property(e => e.BrojNarudzbe).HasMaxLength(50);
+			entity.Property(e => e.Datum).HasColumnType("datetime");
             entity.Property(e => e.KorisnikId).HasColumnName("KorisnikID");
-			entity.Property(e => e.ProizvodId).HasColumnName("ProizvodID");
 			entity.Property(e => e.Status).HasColumnName("Status");
+			entity.Property(e => e.Otkazano).HasColumnName("Otkazano");
 			entity.Property(e => e.PaymentId).HasMaxLength(50);
 
 			entity.HasOne(d => d.Korisnik).WithMany(p => p.Narudzbes)
                 .HasForeignKey(d => d.KorisnikId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Narudzbe_Korisnici");
-
-			entity.HasOne(d => d.Proizvod).WithMany(p => p.Narudzbes)
-				.HasForeignKey(d => d.ProizvodId)
-				.OnDelete(DeleteBehavior.ClientSetNull)
-				.HasConstraintName("FK_Narudzbe_Proizvodi");
 		});
 
-        modelBuilder.Entity<Proizvodi>(entity =>
+		modelBuilder.Entity<NarudzbaStavke>(entity =>
+		{
+			entity.HasKey(e => e.NarudzbaStavkaId);
+			entity.ToTable("NarudzbaStavke");
+			entity.Property(e => e.NarudzbaStavkaId).HasColumnName("NarudzbaStavkaID");
+			entity.Property(e => e.NarudzbaId).HasColumnName("NarudzbaID");
+			entity.Property(e => e.ProizvodId).HasColumnName("ProizvodID");
+			entity.HasOne(d => d.Narudzba).WithMany(p => p.NarudzbaStavkes)
+				.HasForeignKey(d => d.NarudzbaId)
+				.OnDelete(DeleteBehavior.ClientSetNull)
+				.HasConstraintName("FK_NarudzbaStavke_Narudzbe");
+			entity.HasOne(d => d.Proizvod).WithMany(p => p.NarudzbaStavkes)
+				.HasForeignKey(d => d.ProizvodId)
+				.OnDelete(DeleteBehavior.ClientSetNull)
+				.HasConstraintName("FK_NarudzbaStavke_Proizvodi");
+		});
+
+		modelBuilder.Entity<Proizvodi>(entity =>
         {
             entity.HasKey(e => e.ProizvodId);
 

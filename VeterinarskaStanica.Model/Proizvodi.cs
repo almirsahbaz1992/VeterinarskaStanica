@@ -29,6 +29,6 @@ namespace VeterinarskaStanica.Model
 
 		public string StateMachine { get; set; }
 
-		public virtual ICollection<Narudzbe> Narudzbes { get; set; } = new List<Narudzbe>();
+		public virtual ICollection<NarudzbaStavke> NarudzbaStavkes { get; set; } = new List<NarudzbaStavke>();
 	}
 }

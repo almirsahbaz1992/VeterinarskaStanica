@@ -65,15 +65,13 @@ namespace VeterinarskaStanica.Services
 		public override IQueryable<Database.Proizvodi> AddFilter(IQueryable<Database.Proizvodi> query, ProizvodiSearchObject search = null)
 		{
 			var filteredQuery = base.AddFilter(query, search);
-			if (!string.IsNullOrWhiteSpace(search?.Naziv))
-			{
-				filteredQuery = filteredQuery.Where(x => x.Naziv.Contains(search.Naziv)
-				|| x.Naziv.Contains(search.Naziv));
-			}
 			if (!string.IsNullOrWhiteSpace(search?.Sifra))
 			{
-				filteredQuery = filteredQuery.Where(x => x.Sifra.Contains(search.Sifra)
-				|| x.Sifra.Contains(search.Sifra));
+				filteredQuery = filteredQuery.Where(x => x.Sifra == search.Sifra);
+			}
+			if (!string.IsNullOrWhiteSpace(search?.Naziv))
+			{
+				filteredQuery = filteredQuery.Where(x => x.Naziv.Contains(search.Naziv));
 			}
 			return filteredQuery;
 		}
@@ -88,7 +86,29 @@ namespace VeterinarskaStanica.Services
 				{
 					mlContext = new MLContext();
 
+					var tmpData = Context.Narudzbes.Include("NarudzbaStavkes").ToList();
+
 					var data = new List<ProductEntry>();
+
+					foreach (var x in tmpData)
+					{
+						if (x.NarudzbaStavkes.Count > 1)
+						{
+							var distinctItemId = x.NarudzbaStavkes.Select(y => y.ProizvodId).ToList();
+							distinctItemId.ForEach(y =>
+							{
+								var releatedItems = x.NarudzbaStavkes.Where(z => z.ProizvodId != y);
+								foreach (var z in releatedItems)
+								{
+									data.Add(new ProductEntry()
+									{
+										ProductID = (uint)y,
+										CoPurchaseProductID = (uint)z.ProizvodId,
+									});
+								}
+							});
+						}
+					}
 
 					var traindata = mlContext.Data.LoadFromEnumerable(data);
 
@@ -108,15 +128,15 @@ namespace VeterinarskaStanica.Services
 					var est = mlContext.Recommendation().Trainers.MatrixFactorization(options);
 					model = est.Fit(traindata);
 				}
-		}
-			
+			}
+
 
 			var allItems = Context.Proizvodis.Where(x => x.ProizvodId != id);
 
 			var predictionResult = new List<Tuple<Database.Proizvodi, float>>();
-			foreach(var item in allItems)
+			foreach (var item in allItems)
 			{
-				var predictionEngine = mlContext.Model.CreatePredictionEngine<ProductEntry,Copurchase_prediction>(model);
+				var predictionEngine = mlContext.Model.CreatePredictionEngine<ProductEntry, Copurchase_prediction>(model);
 				var prediction = predictionEngine.Predict(new ProductEntry()
 				{
 					ProductID = (uint)id,
@@ -125,7 +145,7 @@ namespace VeterinarskaStanica.Services
 				predictionResult.Add(new Tuple<Database.Proizvodi, float>(item, prediction.Score));
 			}
 			var finalResult = predictionResult.OrderByDescending(x => x.Item2)
-				.Select(x=>x.Item1).Take(3).ToList();
+				.Select(x => x.Item1).Take(3).ToList();
 
 			return Mapper.Map<List<Model.Proizvodi>>(finalResult);
 		}
