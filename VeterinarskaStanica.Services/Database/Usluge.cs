@@ -17,8 +17,6 @@ namespace VeterinarskaStanica.Services.Database
 		public decimal Cijena { get; set; }
 		public int VrstaId { get; set; }
 
-		public int RezervacijaId { get; set; }
-
 		public int JedinicaMjereId { get; set; }
 
 		public byte[]? Slika { get; set; }
@@ -35,6 +33,6 @@ namespace VeterinarskaStanica.Services.Database
 
 		public virtual VrsteUsluga Usluga { get; set; } = null!;
 
-		public virtual Rezervacije Rezervacija { get; set; } = null!;
+		public virtual ICollection<Rezervacije> Rezervacijes { get; set; } = new List<Rezervacije>();
 	}
 }

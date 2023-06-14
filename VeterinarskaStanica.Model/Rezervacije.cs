@@ -11,5 +11,10 @@ namespace VeterinarskaStanica.Model
 		public int RezervacijeId { get; set; }
 
 		public DateTime DatumRezervacije { get; set; }
+
+		public string PaymentId { get; set; }
+
+		public int KorisnikId { get; set; }
+		public int UslugaId { get; set; }
 	}
 }

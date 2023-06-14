@@ -125,6 +125,7 @@ public partial class VeterinarskaStanicaContext : DbContext
             entity.Property(e => e.KorisnikId).HasColumnName("KorisnikID");
 			entity.Property(e => e.ProizvodId).HasColumnName("ProizvodID");
 			entity.Property(e => e.Status).HasColumnName("Status");
+			entity.Property(e => e.PaymentId).HasMaxLength(50);
 
 			entity.HasOne(d => d.Korisnik).WithMany(p => p.Narudzbes)
                 .HasForeignKey(d => d.KorisnikId)
@@ -204,11 +205,6 @@ public partial class VeterinarskaStanicaContext : DbContext
 						   .HasForeignKey(d => d.VrstaId)
 						   .OnDelete(DeleteBehavior.ClientSetNull)
 						   .HasConstraintName("FK_Usluge_VrsteUsluga");
-
-			entity.HasOne(d => d.Rezervacija).WithMany(p => p.Usluge)
-            .HasForeignKey(d => d.RezervacijaId)
-            .OnDelete(DeleteBehavior.ClientSetNull)
-            .HasConstraintName("FK_Usluge_Rezervacije");
 		});
 
 		modelBuilder.Entity<VrsteProizvodum>(entity =>
@@ -281,6 +277,17 @@ public partial class VeterinarskaStanicaContext : DbContext
 
 			entity.Property(e => e.RezervacijeId).HasColumnName("RezervacijaID");
 			entity.Property(e => e.DatumRezervacije).HasColumnType("datetime");
+			entity.Property(e => e.PaymentId).HasMaxLength(50);
+
+			entity.HasOne(d => d.Korisnici).WithMany(p => p.Rezervacijes)
+						   .HasForeignKey(d => d.KorisnikId)
+						   .OnDelete(DeleteBehavior.ClientSetNull)
+						   .HasConstraintName("FK_Rezervacije_Korisnici");
+
+			entity.HasOne(d => d.Usluges).WithMany(p => p.Rezervacijes)
+						   .HasForeignKey(d => d.UslugaId)
+						   .OnDelete(DeleteBehavior.ClientSetNull)
+						   .HasConstraintName("FK_Rezervacije_Usluge");
 		});
 
 		OnModelCreatingPartial(modelBuilder);

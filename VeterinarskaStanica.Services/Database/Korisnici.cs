@@ -25,4 +25,6 @@ public partial class Korisnici
 
     public virtual ICollection<KorisniciUloge> KorisniciUloges { get; set; } = new List<KorisniciUloge>();
 	public virtual ICollection<Narudzbe> Narudzbes { get; set; } = new List<Narudzbe>();
+
+	public virtual ICollection<Rezervacije> Rezervacijes { get; set; } = new List<Rezervacije>();
 }

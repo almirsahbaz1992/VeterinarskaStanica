@@ -12,6 +12,14 @@ namespace VeterinarskaStanica.Services.Database
 
 		public DateTime DatumRezervacije { get; set; }
 
-		public virtual ICollection<Usluge> Usluge { get; set; } = new List<Usluge>();
+		public string PaymentId { get; set; } = null!;
+
+		public int KorisnikId { get; set; }
+
+		public int UslugaId { get; set; }
+
+		public virtual Korisnici Korisnici { get; set; } = null!;
+
+		public virtual Usluge Usluges { get; set; } = null!;
 	}
 }

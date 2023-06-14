@@ -17,7 +17,9 @@ public partial class Narudzbe
 
 	public int Kolicina { get; set; }
 
-    public virtual Korisnici Korisnik { get; set; } = null!;
+	public string PaymentId { get; set; } = null!;
+
+	public virtual Korisnici Korisnik { get; set; } = null!;
 
 	public virtual Proizvodi Proizvod { get; set; } = null!;
 }

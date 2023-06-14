@@ -14,8 +14,6 @@ namespace VeterinarskaStanica.Model.Request
 
 		public int VrstaId { get; set; }
 
-		public int RezervacijaId { get; set; }
-
 		public int JedinicaMjereId { get; set; }
 
 		public byte[] Slika { get; set; }
@@ -28,7 +26,5 @@ namespace VeterinarskaStanica.Model.Request
 		public string StateMachine { get; set; }
 		public List<int> VrsteIdList { get; set; } = new List<int> { };
 		public List<int> JediniceMjereIdList { get; set; } = new List<int> { };
-
-		public List<int> RezervacijaIdList { get; set; } = new List<int> { };
 	}
 }

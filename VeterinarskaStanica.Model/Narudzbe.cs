@@ -13,5 +13,7 @@ namespace VeterinarskaStanica.Model
 		public bool Status { get; set; }
 
 		public int Kolicina { get; set; }
+
+		public string PaymentId { get; set; }
 	}
 }
