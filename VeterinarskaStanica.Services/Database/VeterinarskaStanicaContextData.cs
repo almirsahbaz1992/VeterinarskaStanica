@@ -23,6 +23,7 @@ namespace VeterinarskaStanica.Services.Database
 				Ime = "Administator",
 				Prezime = "Administrator",
 				Email = "admin@fit.ba",
+				Telefon = "062/222-111",
 				KorisnickoIme = "admin",
 				LozinkaHash = "JfJzsL3ngGWki+Dn67C+8WLy73I=",
 				LozinkaSalt = "7TUJfmgkkDvcY3PB/M4fhg==",
@@ -37,6 +38,7 @@ namespace VeterinarskaStanica.Services.Database
 				Ime = "John",
 				Prezime = "Doe",
 				Email = "test@fit.ba",
+				Telefon = "061/111-222",
 				KorisnickoIme = "korisnik",
 				LozinkaHash = "q9VhJL28g0gEndaOYoOXGyMZxW4=",
 				LozinkaSalt = "6TPig6aUhqRbUC/5CJeU+w==",
@@ -60,9 +62,9 @@ namespace VeterinarskaStanica.Services.Database
 
 			modelBuilder.Entity<Proizvodi>().HasData(new Proizvodi { ProizvodId = 2, Slika = img, Naziv = "Lijek protiv krpelja", Sifra = "P003", Cijena = 24, VrstaId = 2, JedinicaMjereId = 1, Status = true, Opis = "Detaljan opis lijeka protiv krpelja!", PaymentId = "null", StateMachine = "draft" });
 
-			modelBuilder.Entity<Proizvodi>().HasData(new Proizvodi { ProizvodId = 3, Slika = img, Naziv = "Kupka", Sifra = "P004", Cijena = 1201, VrstaId = 1, JedinicaMjereId = 2, Status = true, Opis = "Detaljan opis lijeka protiv krpelja!", PaymentId = "null", StateMachine = "draft" });
+			modelBuilder.Entity<Proizvodi>().HasData(new Proizvodi { ProizvodId = 3, Slika = img, Naziv = "Kupka", Sifra = "P004", Cijena = 1201, VrstaId = 1, JedinicaMjereId = 2, Status = true, Opis = "Detaljan opis kupke!", PaymentId = "null", StateMachine = "draft" });
 
-			modelBuilder.Entity<Proizvodi>().HasData(new Proizvodi { ProizvodId = 4, Slika = img, Naziv = "Šampon za cuke", Sifra = "P005", Cijena = 34, VrstaId = 1, JedinicaMjereId = 2, Status = true, Opis = "Detaljan opis lijeka protiv krpelja!", PaymentId = "null", StateMachine = "draft" });
+			modelBuilder.Entity<Proizvodi>().HasData(new Proizvodi { ProizvodId = 4, Slika = img, Naziv = "Šampon za cuke", Sifra = "P005", Cijena = 34, VrstaId = 1, JedinicaMjereId = 2, Status = true, Opis = "Detaljan opis šampona!", PaymentId = "null", StateMachine = "draft" });
 
 			modelBuilder.Entity<RadnaMjesta>().HasData(new RadnaMjesta { RadnaMjestaId = 1, Naziv = "Ljekar" });
 			modelBuilder.Entity<RadnaMjesta>().HasData(new RadnaMjesta { RadnaMjestaId = 2, Naziv = "Medicinska sestra" });

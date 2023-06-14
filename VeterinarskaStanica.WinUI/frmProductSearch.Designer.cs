@@ -38,6 +38,7 @@
 			Sifra = new DataGridViewTextBoxColumn();
 			Cijena = new DataGridViewTextBoxColumn();
 			Slika = new DataGridViewImageColumn();
+			Opis = new DataGridViewTextBoxColumn();
 			Status = new DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)dgProizvodi).BeginInit();
 			SuspendLayout();
@@ -48,6 +49,7 @@
 			txtNaziv.Name = "txtNaziv";
 			txtNaziv.Size = new Size(170, 27);
 			txtNaziv.TabIndex = 0;
+			txtNaziv.KeyDown += txtNaziv_KeyDown;
 			// 
 			// txtSifra
 			// 
@@ -55,6 +57,7 @@
 			txtSifra.Name = "txtSifra";
 			txtSifra.Size = new Size(179, 27);
 			txtSifra.TabIndex = 1;
+			txtSifra.KeyDown += txtSifra_KeyDown;
 			// 
 			// label1
 			// 
@@ -88,7 +91,7 @@
 			// 
 			dgProizvodi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 			dgProizvodi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dgProizvodi.Columns.AddRange(new DataGridViewColumn[] { Naziv, Sifra, Cijena, Slika, Status });
+			dgProizvodi.Columns.AddRange(new DataGridViewColumn[] { Naziv, Sifra, Cijena, Slika, Opis, Status });
 			dgProizvodi.Location = new Point(27, 88);
 			dgProizvodi.Name = "dgProizvodi";
 			dgProizvodi.RowHeadersWidth = 51;
@@ -128,6 +131,13 @@
 			Slika.Resizable = DataGridViewTriState.True;
 			Slika.SortMode = DataGridViewColumnSortMode.Automatic;
 			// 
+			// Opis
+			// 
+			Opis.DataPropertyName = "Opis";
+			Opis.HeaderText = "Opis";
+			Opis.MinimumWidth = 6;
+			Opis.Name = "Opis";
+			// 
 			// Status
 			// 
 			Status.DataPropertyName = "Status";
@@ -165,6 +175,7 @@
 		private DataGridViewTextBoxColumn Sifra;
 		private DataGridViewTextBoxColumn Cijena;
 		private DataGridViewImageColumn Slika;
+		private DataGridViewTextBoxColumn Opis;
 		private DataGridViewTextBoxColumn Status;
 	}
 }

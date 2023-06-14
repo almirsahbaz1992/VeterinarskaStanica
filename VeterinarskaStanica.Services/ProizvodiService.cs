@@ -67,11 +67,11 @@ namespace VeterinarskaStanica.Services
 			var filteredQuery = base.AddFilter(query, search);
 			if (!string.IsNullOrWhiteSpace(search?.Sifra))
 			{
-				filteredQuery = filteredQuery.Where(x => x.Sifra == search.Sifra);
+				filteredQuery = filteredQuery.Where(x => x.Sifra == search.Sifra || x.Sifra.Contains(search.Sifra));
 			}
 			if (!string.IsNullOrWhiteSpace(search?.Naziv))
 			{
-				filteredQuery = filteredQuery.Where(x => x.Naziv.Contains(search.Naziv));
+				filteredQuery = filteredQuery.Where(x => x.Naziv.Contains(search.Naziv) || x.Naziv.Contains(search.Naziv));
 			}
 			return filteredQuery;
 		}

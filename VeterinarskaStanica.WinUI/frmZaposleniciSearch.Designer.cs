@@ -48,6 +48,7 @@
 			txtIme.Name = "txtIme";
 			txtIme.Size = new Size(186, 27);
 			txtIme.TabIndex = 0;
+			txtIme.KeyDown += txtIme_KeyDown;
 			// 
 			// txtPrezime
 			// 
@@ -55,6 +56,7 @@
 			txtPrezime.Name = "txtPrezime";
 			txtPrezime.Size = new Size(195, 27);
 			txtPrezime.TabIndex = 1;
+			txtPrezime.KeyDown += txtPrezime_KeyDown;
 			// 
 			// label1
 			// 

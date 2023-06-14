@@ -19,7 +19,6 @@ namespace VeterinarskaStanica.Services.Database
 		public float Plata { get; set; }
 
 		public virtual RadnaMjesta RadnaMjesta { get; set; } = null!;
-		public virtual ICollection<ZaposleniciRadnaMjesta> ZaposleniciRadnaMjestas { get; set; } = new List<ZaposleniciRadnaMjesta>();
 
 	}
 }

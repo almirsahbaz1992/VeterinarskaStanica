@@ -13,8 +13,5 @@ namespace VeterinarskaStanica.Services.Database
 		public string Naziv { get; set; } = null!;
 
 		public virtual ICollection<Zaposlenici> Zaposlenicis { get; set; } = new List<Zaposlenici>();
-
-		public virtual ICollection<ZaposleniciRadnaMjesta> ZaposleniciRadnaMjestas { get; set; } = new List<ZaposleniciRadnaMjesta>();
-
 	}
 }

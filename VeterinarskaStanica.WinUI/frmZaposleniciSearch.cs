@@ -37,5 +37,17 @@ namespace VeterinarskaStanica.WinUI
 			frmZaposlenici frm = new frmZaposlenici(item);
 			frm.ShowDialog();
 		}
+
+		private void txtIme_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+				btnSearch.PerformClick();
+		}
+
+		private void txtPrezime_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+				btnSearch.PerformClick();
+		}
 	}
 }

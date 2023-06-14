@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using VeterinarskaStanica.Model;
+using VeterinarskaStanica.Model.SearchObjects;
 
 namespace VeterinarskaStanica.WinUI
 {

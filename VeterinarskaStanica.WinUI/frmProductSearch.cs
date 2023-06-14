@@ -43,5 +43,17 @@ namespace VeterinarskaStanica.WinUI
 			frmProductDetails frm = new frmProductDetails(item);
 			frm.ShowDialog();
 		}
+
+		private void txtNaziv_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+				btnSearch.PerformClick();
+		}
+
+		private void txtSifra_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+				btnSearch.PerformClick();
+		}
 	}
 }

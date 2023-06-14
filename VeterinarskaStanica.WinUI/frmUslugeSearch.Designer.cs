@@ -58,6 +58,7 @@
 			txtSifra.Name = "txtSifra";
 			txtSifra.Size = new Size(177, 27);
 			txtSifra.TabIndex = 1;
+			txtSifra.KeyDown += txtSifra_KeyDown;
 			// 
 			// txtNaziv
 			// 
@@ -65,6 +66,7 @@
 			txtNaziv.Name = "txtNaziv";
 			txtNaziv.Size = new Size(167, 27);
 			txtNaziv.TabIndex = 2;
+			txtNaziv.KeyDown += txtNaziv_KeyDown;
 			// 
 			// label1
 			// 

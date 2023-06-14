@@ -123,6 +123,7 @@
 			txtUsername.Name = "txtUsername";
 			txtUsername.Size = new Size(241, 27);
 			txtUsername.TabIndex = 2;
+			txtUsername.KeyDown += txtUsername_KeyDown;
 			// 
 			// txtName
 			// 
@@ -130,6 +131,7 @@
 			txtName.Name = "txtName";
 			txtName.Size = new Size(241, 27);
 			txtName.TabIndex = 3;
+			txtName.KeyDown += txtName_KeyDown;
 			// 
 			// lblUsername
 			// 

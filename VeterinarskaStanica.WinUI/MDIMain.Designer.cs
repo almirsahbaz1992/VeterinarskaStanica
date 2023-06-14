@@ -112,14 +112,14 @@
 			// unosNoveUslugeToolStripMenuItem
 			// 
 			unosNoveUslugeToolStripMenuItem.Name = "unosNoveUslugeToolStripMenuItem";
-			unosNoveUslugeToolStripMenuItem.Size = new Size(224, 26);
+			unosNoveUslugeToolStripMenuItem.Size = new Size(208, 26);
 			unosNoveUslugeToolStripMenuItem.Text = "Unos nove usluge";
 			unosNoveUslugeToolStripMenuItem.Click += unosNoveUslugeToolStripMenuItem_Click;
 			// 
 			// pretragaUslugaToolStripMenuItem
 			// 
 			pretragaUslugaToolStripMenuItem.Name = "pretragaUslugaToolStripMenuItem";
-			pretragaUslugaToolStripMenuItem.Size = new Size(224, 26);
+			pretragaUslugaToolStripMenuItem.Size = new Size(208, 26);
 			pretragaUslugaToolStripMenuItem.Text = "Pretraga usluga";
 			pretragaUslugaToolStripMenuItem.Click += pretragaUslugaToolStripMenuItem_Click;
 			// 
@@ -199,6 +199,7 @@
 		private ToolStripMenuItem pretragaZaposlenikaToolStripMenuItem;
 		private ToolStripMenuItem pretragaProizvodaToolStripMenuItem;
 		private ToolStripMenuItem pretragaUslugaToolStripMenuItem;
+		private PictureBox pictureBox1;
 	}
 }
 

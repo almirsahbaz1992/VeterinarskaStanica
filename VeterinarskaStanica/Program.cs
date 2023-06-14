@@ -66,7 +66,7 @@ var app = builder.Build();
 using (var Scope = app.Services.CreateScope())
 {
 	var context = Scope.ServiceProvider.GetRequiredService<VeterinarskaStanicaContext>();
-	//context.Database.Migrate();
+	context.Database.Migrate();
 }
 
 // Configure the HTTP request pipeline.

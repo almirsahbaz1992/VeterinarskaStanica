@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,6 +22,7 @@ namespace VeterinarskaStanica.WinUI
 		public APIService RoleService { get; set; } = new APIService("Uloge");
 
 		private Korisnici _model = null;
+
 		public frmKorisniciDetails(Korisnici model = null)
 		{
 			InitializeComponent();
@@ -65,7 +67,6 @@ namespace VeterinarskaStanica.WinUI
 					{
 						Ime = txtIme.Text,
 						Prezime = txtPrezime.Text,
-						Email = txtEmail.Text,
 						Telefon = txtTelefon.Text,
 						Password = txtPassword.Text,
 						PasswordPotvrda = txtPotvrda.Text,
@@ -275,4 +276,5 @@ namespace VeterinarskaStanica.WinUI
 			}
 		}
 	}
+
 }

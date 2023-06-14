@@ -78,7 +78,7 @@ namespace VeterinarskaStanica.WinUI
 					MessageBox.Show("Uspješno ste ažurirali podatke o proizvodu!");
 				}
 			}
-			else
+			else if (image.Image == null)
 			{
 				MessageBox.Show("Odabir slike je obavezan!");
 			}

@@ -67,7 +67,8 @@ namespace VeterinarskaStanica.Services
 			var filteredQuery = base.AddFilter(query, search);
 			if(!string.IsNullOrWhiteSpace(search?.KorisnickoIme))
 			{
-				filteredQuery = filteredQuery.Where(x => x.KorisnickoIme == search.KorisnickoIme);
+				filteredQuery = filteredQuery.Where(x => x.KorisnickoIme.Contains(search.KorisnickoIme) 
+					|| x.KorisnickoIme.Contains(search.NameFTS));
 			}
 			if (!string.IsNullOrWhiteSpace(search?.NameFTS))
 			{

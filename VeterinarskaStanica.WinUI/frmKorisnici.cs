@@ -38,5 +38,17 @@ namespace VeterinarskaStanica.WinUI
 			frmKorisniciDetails frm = new frmKorisniciDetails(item);
 			frm.ShowDialog();
 		}
+
+		private void txtUsername_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+				btnShow.PerformClick();
+		}
+
+		private void txtName_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+				btnShow.PerformClick();
+		}
 	}
 }
