@@ -89,7 +89,11 @@ namespace VeterinarskaStanica.WinUI
 		private async void btnSave_Click(object sender, EventArgs e)
 		{
 			var radnaMjestaList = (RadnaMjesta)cbRadnaMjesta.SelectedItem;
-			if (_model == null)
+			if (txtIme.Text == "" || txtPrezime.Text == "" || txtPlata.Text == "")
+			{
+				MessageBox.Show("Sva polja moraju biti popunjena");
+			}
+			else if (_model == null)
 			{
 				ZaposleniciInsertRequest insertRequest = new ZaposleniciInsertRequest()
 				{
