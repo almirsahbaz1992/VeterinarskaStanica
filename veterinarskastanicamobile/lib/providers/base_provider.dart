@@ -10,7 +10,7 @@ abstract class BaseProvider<T> with ChangeNotifier {
   static String? _baseUrl;
   String? _endpoint;
 
-  HttpClient client = new HttpClient();
+  HttpClient client = HttpClient();
   IOClient? http;
 
   BaseProvider(String endpoint) {
@@ -19,7 +19,7 @@ abstract class BaseProvider<T> with ChangeNotifier {
     print("baseurl: $_baseUrl");
 
     if (_baseUrl!.endsWith("/") == false) {
-      _baseUrl = _baseUrl! + "/";
+      _baseUrl = "${_baseUrl!}/";
     }
 
     _endpoint = endpoint;
@@ -27,7 +27,7 @@ abstract class BaseProvider<T> with ChangeNotifier {
     http = IOClient(client);
   }
 
-  Future<List<T>> getById(int id, [dynamic additionalData]) async {
+  Future<T> getById(int id, [dynamic additionalData]) async {
     var url = Uri.parse("$_baseUrl$_endpoint/$id");
 
     Map<String, String> headers = createHeaders();
@@ -36,9 +36,9 @@ abstract class BaseProvider<T> with ChangeNotifier {
 
     if (isValidResponseCode(response)) {
       var data = jsonDecode(response.body);
-      return data.map((x) => fromJson(x)).cast<T>().toList();
+      return fromJson(data);
     } else {
-      throw Exception("Exception... handle this gracefully");
+      throw Exception("An error occured!");
     }
   }
 
@@ -47,7 +47,7 @@ abstract class BaseProvider<T> with ChangeNotifier {
 
     if (search != null) {
       String queryString = getQueryString(search);
-      url = url + "?" + queryString;
+      url = "$url?$queryString";
     }
 
     var uri = Uri.parse(url);
@@ -74,7 +74,7 @@ abstract class BaseProvider<T> with ChangeNotifier {
 
     if (isValidResponseCode(response)) {
       var data = jsonDecode(response.body);
-      return fromJson(data) as T;
+      return fromJson(data);
     } else {
       return null;
     }
@@ -91,7 +91,7 @@ abstract class BaseProvider<T> with ChangeNotifier {
 
     if (isValidResponseCode(response)) {
       var data = jsonDecode(response.body);
-      return fromJson(data) as T;
+      return fromJson(data);
     } else {
       return null;
     }
@@ -135,7 +135,7 @@ abstract class BaseProvider<T> with ChangeNotifier {
         }
         query += '$prefix$key=$encoded';
       } else if (value is DateTime) {
-        query += '$prefix$key=${(value as DateTime).toIso8601String()}';
+        query += '$prefix$key=${(value).toIso8601String()}';
       } else if (value is List || value is Map) {
         if (value is List) value = value.asMap();
         value.forEach((k, v) {
@@ -166,6 +166,27 @@ abstract class BaseProvider<T> with ChangeNotifier {
       throw Exception("Not found");
     } else if (response.statusCode == 500) {
       throw Exception("Internal server error");
+    } else {
+      throw Exception("Exception... handle this gracefully");
+    }
+  }
+
+  Future<List<T>> getRecommendedProducts(int productId) async {
+    //TO DO Change this to correct UTR
+    var url = "http://10.0.2.2:5192/Proizvodi/$productId/Recommend/";
+
+    var uri = Uri.parse(url);
+    Map<String, String> headers = createHeaders();
+    if (kDebugMode) {
+      print("get me");
+    }
+    var response = await http!.get(uri, headers: headers);
+    if (kDebugMode) {
+      print("done $response");
+    }
+    if (isValidResponseCode(response)) {
+      var data = jsonDecode(response.body);
+      return data.map((x) => fromJson(x)).cast<T>().toList();
     } else {
       throw Exception("Exception... handle this gracefully");
     }

@@ -41,6 +41,8 @@ dependencies:
   collection: ^1.17.1
   json_serializable: ^6.7.0
   json_annotation: ^4.8.1
+  shared_preferences: ^2.1.2
+  flutter_stripe: ^9.2.1
 
 dev_dependencies:
   flutter_test:

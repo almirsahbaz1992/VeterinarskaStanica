@@ -6,8 +6,7 @@ class OrderProvider extends BaseProvider<Order> {
   OrderProvider() : super("Narudzbe");
 
   @override
-  fromJson(data) {
-    // TODO: implement fromJson
-    return Order();
+  Order fromJson(data) {
+    return Order.fromJson(data);
   }
 }

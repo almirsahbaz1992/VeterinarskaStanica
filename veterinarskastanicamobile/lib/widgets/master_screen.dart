@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:veterinarskastanicamobile/screens/services/services_screen.dart';
 import '../screens/cart/cart_screen.dart';
 import '../screens/products/product_list_screen.dart';
 import 'veterinarskastanica_drawer.dart';
@@ -23,6 +24,8 @@ class _MasterScreenWidgetState extends State<MasterScreenWidget> {
       Navigator.pushNamed(context, ProductListScreen.routeName);
     } else if (currentIndex == 1) {
       Navigator.pushNamed(context, CartScreen.routeName);
+    } else if (currentIndex == 2) {
+      Navigator.pushNamed(context, ServiceListScreen.routeName);
     }
   }
 
@@ -43,6 +46,10 @@ class _MasterScreenWidgetState extends State<MasterScreenWidget> {
           BottomNavigationBarItem(
             icon: Icon(Icons.shopping_bag),
             label: 'Cart',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.medical_services),
+            label: 'Usluge',
           ),
         ],
         selectedItemColor: Colors.blue[800],

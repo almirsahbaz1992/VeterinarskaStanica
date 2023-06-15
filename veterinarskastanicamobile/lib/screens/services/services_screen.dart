@@ -1,38 +1,36 @@
-import 'package:veterinarskastanicamobile/providers/product_provider.dart';
-import 'package:veterinarskastanicamobile/screens/products/product_details_screen.dart';
+import 'package:veterinarskastanicamobile/model/usluge.dart';
+import 'package:veterinarskastanicamobile/providers/services_provider.dart';
+import 'package:veterinarskastanicamobile/screens/services/service_details_screen.dart';
 import 'package:veterinarskastanicamobile/utils/util.dart';
 import 'package:veterinarskastanicamobile/widgets/master_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../model/product.dart';
-import '../../providers/cart_provider.dart';
+class ServiceListScreen extends StatefulWidget {
+  static const String routeName = "/service";
 
-class ProductListScreen extends StatefulWidget {
-  static const String routeName = "/product";
-
-  const ProductListScreen({Key? key}) : super(key: key);
+  const ServiceListScreen({Key? key}) : super(key: key);
 
   @override
-  State<ProductListScreen> createState() => _ProductListScreenState();
+  State<ServiceListScreen> createState() => _ServiceListScreen();
 }
 
-class _ProductListScreenState extends State<ProductListScreen> {
-  ProductProvider? _productProvider;
-  CartProvider? _cartProvider;
-  List<Product> data = [];
+class _ServiceListScreen extends State<ServiceListScreen> {
+  ServiceProvider? _serviceProvider;
+  List<Service> data = [];
   final TextEditingController _searchController = TextEditingController();
 
   @override
   void initState() {
+    // TODO: implement initState
     super.initState();
-    _productProvider = context.read<ProductProvider>();
-    _cartProvider = context.read<CartProvider>();
+    _serviceProvider = context.read<ServiceProvider>();
+    //print("called initState");
     loadData();
   }
 
   Future loadData() async {
-    var tmpData = await _productProvider?.get(null);
+    var tmpData = await _serviceProvider?.get(null);
     setState(() {
       data = tmpData!;
     });
@@ -40,6 +38,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // print("called build $data");
     return MasterScreenWidget(
         child: SingleChildScrollView(
       child: Column(
@@ -50,11 +49,11 @@ class _ProductListScreenState extends State<ProductListScreen> {
           SizedBox(
             // Wrap the GridView with Container
             width: double.infinity, // Set width to expand to full width
-            height: 550, // Set desired height for the GridView
+            height: 500, // Set desired height for the GridView
             child: GridView(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 1,
-                childAspectRatio: 3 / 1,
+                childAspectRatio: 4 / 1,
                 mainAxisSpacing: 5,
               ),
               scrollDirection: Axis.vertical,
@@ -70,7 +69,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       child: const Text(
-        "Proizvodi",
+        "Usluge",
         style: TextStyle(
             color: Colors.grey, fontSize: 40, fontWeight: FontWeight.w600),
       ),
@@ -86,7 +85,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
             child: TextField(
               controller: _searchController,
               onSubmitted: (value) async {
-                var tmpData = await _productProvider?.get({'naziv': value});
+                var tmpData = await _serviceProvider?.get({'naziv': value});
                 setState(() {
                   data = tmpData!;
                 });
@@ -128,7 +127,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
             onTap: () {
               Navigator.pushNamed(
                 context,
-                "${ProductDetailsScreen.routeName}/${x.proizvodId}",
+                "${ServiceDetailsScreen.routeName}/${x.uslugaId}",
               );
             },
             child: Container(
@@ -171,12 +170,12 @@ class _ProductListScreenState extends State<ProductListScreen> {
                       ],
                     ),
                   ),
-                  IconButton(
-                    icon: const Icon(Icons.shopping_cart),
-                    onPressed: () {
-                      _cartProvider?.addToCart(x);
-                    },
-                  ),
+                  // IconButton(
+                  //   icon: const Icon(Icons.shopping_cart),
+                  //   onPressed: () {
+                  //     _cartProvider?.addToCart(x);
+                  //   },
+                  // ),
                 ],
               ),
             ),

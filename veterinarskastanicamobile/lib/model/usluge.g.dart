@@ -1,28 +1,28 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'product.dart';
+part of 'usluge.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-Product _$ProductFromJson(Map<String, dynamic> json) => Product()
-  ..proizvodId = json['proizvodId'] as int?
+Service _$ServiceFromJson(Map<String, dynamic> json) => Service()
+  ..uslugaId = json['uslugaId'] as int?
   ..naziv = json['naziv'] as String?
-  ..slika = json['slika'] as String?
+  ..sifra = json['sifra'] as String?
   ..cijena = (json['cijena'] as num?)?.toDouble()
-  ..opis = json['opis'] as String?
   ..vrstaId = json['vrstaId'] as int?
   ..jedinicaMjereId = json['jedinicaMjereId'] as int?
-  ..sifra = json['sifra'] as String?;
+  ..slika = json['slika'] as String?
+  ..status = json['status'] as bool?;
 
-Map<String, dynamic> _$ProductToJson(Product instance) => <String, dynamic>{
-      'proizvodId': instance.proizvodId,
+Map<String, dynamic> _$ServiceToJson(Service instance) => <String, dynamic>{
+      'uslugaId': instance.uslugaId,
       'naziv': instance.naziv,
-      'slika': instance.slika,
+      'sifra': instance.sifra,
       'cijena': instance.cijena,
-      'opis': instance.opis,
       'vrstaId': instance.vrstaId,
       'jedinicaMjereId': instance.jedinicaMjereId,
-      'sifra': instance.sifra,
+      'slika': instance.slika,
+      'status': instance.status,
     };

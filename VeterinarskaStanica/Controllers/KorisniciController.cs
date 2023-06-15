@@ -7,6 +7,7 @@ using VeterinarskaStanica.Services;
 
 namespace VeterinarskaStanica.Controllers
 {
+	//contoller
 	[ApiController]
 	[Route("[controller]")]
 	public class KorisniciController : BaseCRUDController<Model.Korisnici, KorisniciSearchObject, KorisniciInsertRequest, KorisniciUpdateRequest>

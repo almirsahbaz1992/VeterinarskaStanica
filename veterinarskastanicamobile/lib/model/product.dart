@@ -7,8 +7,11 @@ class Product {
   String? naziv;
   String? slika;
   double? cijena;
-
-  Product() {}
+  String? opis;
+  int? vrstaId;
+  int? jedinicaMjereId;
+  String? sifra;
+  Product();
 
   factory Product.fromJson(Map<String, dynamic> json) =>
       _$ProductFromJson(json);
