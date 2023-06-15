@@ -9,10 +9,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="NarudzbeReport.rdlc" />
+    <None Remove="NarudzbeSet.xsd" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="NarudzbeReport.rdlc" />
+    <EmbeddedResource Include="NarudzbeSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NarudzbeSet.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Flurl" Version="3.0.7" />
     <PackageReference Include="Flurl.Http" Version="3.2.4" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.0.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="ReportViewerCore.WinForms" Version="15.1.17" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +35,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="NarudzbeSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>NarudzbeSet.xsd</DependentUpon>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

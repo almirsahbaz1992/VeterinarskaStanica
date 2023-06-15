@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NarudzbeSet" targetNamespace="http://tempuri.org/NarudzbeSet.xsd" xmlns:mstns="http://tempuri.org/NarudzbeSet.xsd" xmlns="http://tempuri.org/NarudzbeSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection ConnectionStringObject="Data Source=&quot;localhost, 1401&quot;;Initial Catalog=VeterinarskaStanica;Persist Security Info=True;User ID=sa;Password=QWElkj132!" IsAppSettingsProperty="false" Modifier="Assembly" Name="c228025aefcf.VeterinarskaStanica.dbo1" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="c228025aefcf.VeterinarskaStanica.dbo1" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Narudzbe.BrojNarudzbe, Narudzbe.Datum, Narudzbe.Status, Narudzbe.Otkazano, Narudzbe.PaymentId, NarudzbaStavke.Kolicina
+FROM     Narudzbe INNER JOIN
+                  NarudzbaStavke ON Narudzbe.NarudzbaID = NarudzbaStavke.NarudzbaID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="BrojNarudzbe" DataSetColumn="BrojNarudzbe" />
+              <Mapping SourceColumn="Datum" DataSetColumn="Datum" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+              <Mapping SourceColumn="Otkazano" DataSetColumn="Otkazano" />
+              <Mapping SourceColumn="PaymentId" DataSetColumn="PaymentId" />
+              <Mapping SourceColumn="Kolicina" DataSetColumn="Kolicina" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="NarudzbeSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="NarudzbeSet" msprop:Generator_DataSetName="NarudzbeSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_UserTableName="DataTable1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BrojNarudzbe" msprop:Generator_ColumnPropNameInRow="BrojNarudzbe" msprop:Generator_ColumnPropNameInTable="BrojNarudzbeColumn" msprop:Generator_ColumnVarNameInTable="columnBrojNarudzbe" msprop:Generator_UserColumnName="BrojNarudzbe">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Datum" msprop:Generator_ColumnPropNameInRow="Datum" msprop:Generator_ColumnPropNameInTable="DatumColumn" msprop:Generator_ColumnVarNameInTable="columnDatum" msprop:Generator_UserColumnName="Datum" type="xs:dateTime" />
+              <xs:element name="Status" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_UserColumnName="Status" type="xs:boolean" />
+              <xs:element name="Otkazano" msprop:Generator_ColumnPropNameInRow="Otkazano" msprop:Generator_ColumnPropNameInTable="OtkazanoColumn" msprop:Generator_ColumnVarNameInTable="columnOtkazano" msprop:Generator_UserColumnName="Otkazano" type="xs:boolean" minOccurs="0" />
+              <xs:element name="PaymentId" msprop:Generator_ColumnPropNameInRow="PaymentId" msprop:Generator_ColumnPropNameInTable="PaymentIdColumn" msprop:Generator_ColumnVarNameInTable="columnPaymentId" msprop:Generator_UserColumnName="PaymentId">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Kolicina" msprop:Generator_ColumnPropNameInRow="Kolicina" msprop:Generator_ColumnPropNameInTable="KolicinaColumn" msprop:Generator_ColumnVarNameInTable="columnKolicina" msprop:Generator_UserColumnName="Kolicina" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

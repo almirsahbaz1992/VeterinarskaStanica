@@ -168,5 +168,14 @@ namespace VeterinarskaStanica.WinUI
 
 			frm.Show();
 		}
+
+		private void izvještajSvihNarudžbiToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			frmNarudzbeReport frm = new frmNarudzbeReport();
+			frm.MdiParent = this;
+			frm.WindowState = FormWindowState.Maximized;
+
+			frm.Show();
+		}
 	}
 }

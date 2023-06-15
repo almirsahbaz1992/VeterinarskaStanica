@@ -45,6 +45,8 @@
 			statusStrip = new StatusStrip();
 			toolStripStatusLabel = new ToolStripStatusLabel();
 			toolTip = new ToolTip(components);
+			izvještajiToolStripMenuItem = new ToolStripMenuItem();
+			izvještajSvihNarudžbiToolStripMenuItem = new ToolStripMenuItem();
 			menuStrip.SuspendLayout();
 			statusStrip.SuspendLayout();
 			SuspendLayout();
@@ -52,7 +54,7 @@
 			// menuStrip
 			// 
 			menuStrip.ImageScalingSize = new Size(20, 20);
-			menuStrip.Items.AddRange(new ToolStripItem[] { korisniciToolStripMenuItem, proizvodiToolStripMenuItem, uToolStripMenuItem, zaposleniciToolStripMenuItem });
+			menuStrip.Items.AddRange(new ToolStripItem[] { korisniciToolStripMenuItem, proizvodiToolStripMenuItem, uToolStripMenuItem, zaposleniciToolStripMenuItem, izvještajiToolStripMenuItem });
 			menuStrip.Location = new Point(0, 0);
 			menuStrip.Name = "menuStrip";
 			menuStrip.Padding = new Padding(8, 3, 0, 3);
@@ -161,6 +163,20 @@
 			toolStripStatusLabel.Size = new Size(49, 20);
 			toolStripStatusLabel.Text = "Status";
 			// 
+			// izvještajiToolStripMenuItem
+			// 
+			izvještajiToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { izvještajSvihNarudžbiToolStripMenuItem });
+			izvještajiToolStripMenuItem.Name = "izvještajiToolStripMenuItem";
+			izvještajiToolStripMenuItem.Size = new Size(80, 24);
+			izvještajiToolStripMenuItem.Text = "Izvještaji";
+			// 
+			// izvještajSvihNarudžbiToolStripMenuItem
+			// 
+			izvještajSvihNarudžbiToolStripMenuItem.Name = "izvještajSvihNarudžbiToolStripMenuItem";
+			izvještajSvihNarudžbiToolStripMenuItem.Size = new Size(236, 26);
+			izvještajSvihNarudžbiToolStripMenuItem.Text = "Izvještaj svih narudžbi";
+			izvještajSvihNarudžbiToolStripMenuItem.Click += izvještajSvihNarudžbiToolStripMenuItem_Click;
+			// 
 			// MDIMain
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
@@ -200,6 +216,8 @@
 		private ToolStripMenuItem pretragaProizvodaToolStripMenuItem;
 		private ToolStripMenuItem pretragaUslugaToolStripMenuItem;
 		private PictureBox pictureBox1;
+		private ToolStripMenuItem izvještajiToolStripMenuItem;
+		private ToolStripMenuItem izvještajSvihNarudžbiToolStripMenuItem;
 	}
 }
 

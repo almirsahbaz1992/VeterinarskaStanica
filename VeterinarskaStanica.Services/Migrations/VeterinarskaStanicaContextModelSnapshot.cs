@@ -170,14 +170,14 @@ namespace VeterinarskaStanica.Services.Migrations
                         new
                         {
                             KorisnikUlogaId = 1,
-                            DatumIzmjene = new DateTime(2023, 6, 14, 0, 0, 0, 0, DateTimeKind.Local),
+                            DatumIzmjene = new DateTime(2023, 6, 15, 0, 0, 0, 0, DateTimeKind.Local),
                             KorisnikId = 1,
                             UlogaId = 1
                         },
                         new
                         {
                             KorisnikUlogaId = 2,
-                            DatumIzmjene = new DateTime(2023, 6, 14, 0, 0, 0, 0, DateTimeKind.Local),
+                            DatumIzmjene = new DateTime(2023, 6, 15, 0, 0, 0, 0, DateTimeKind.Local),
                             KorisnikId = 2,
                             UlogaId = 1
                         });
@@ -287,20 +287,20 @@ namespace VeterinarskaStanica.Services.Migrations
                         {
                             NarudzbaId = 1,
                             BrojNarudzbe = "A111",
-                            Datum = new DateTime(2023, 6, 14, 22, 59, 36, 625, DateTimeKind.Local).AddTicks(1558),
+                            Datum = new DateTime(2023, 6, 15, 21, 57, 41, 554, DateTimeKind.Local).AddTicks(4317),
                             KorisnikId = 1,
                             Otkazano = false,
-                            PaymentId = "null",
+                            PaymentId = "ID001",
                             Status = true
                         },
                         new
                         {
                             NarudzbaId = 2,
                             BrojNarudzbe = "A222",
-                            Datum = new DateTime(2023, 6, 14, 22, 59, 36, 625, DateTimeKind.Local).AddTicks(1571),
+                            Datum = new DateTime(2023, 6, 15, 21, 57, 41, 554, DateTimeKind.Local).AddTicks(4330),
                             KorisnikId = 2,
                             Otkazano = false,
-                            PaymentId = "null",
+                            PaymentId = "ID002",
                             Status = true
                         });
                 });
@@ -493,25 +493,25 @@ namespace VeterinarskaStanica.Services.Migrations
                         new
                         {
                             RezervacijeId = 1,
-                            DatumRezervacije = new DateTime(2023, 6, 14, 22, 59, 36, 625, DateTimeKind.Local).AddTicks(1610),
+                            DatumRezervacije = new DateTime(2023, 6, 15, 21, 57, 41, 554, DateTimeKind.Local).AddTicks(4376),
                             KorisnikId = 1,
-                            PaymentId = "null",
+                            PaymentId = "ID001",
                             UslugaId = 1
                         },
                         new
                         {
                             RezervacijeId = 2,
-                            DatumRezervacije = new DateTime(2023, 6, 14, 22, 59, 36, 625, DateTimeKind.Local).AddTicks(1623),
+                            DatumRezervacije = new DateTime(2023, 6, 15, 21, 57, 41, 554, DateTimeKind.Local).AddTicks(4387),
                             KorisnikId = 2,
-                            PaymentId = "null",
+                            PaymentId = "ID002",
                             UslugaId = 2
                         },
                         new
                         {
                             RezervacijeId = 3,
-                            DatumRezervacije = new DateTime(2023, 6, 14, 22, 59, 36, 625, DateTimeKind.Local).AddTicks(1633),
+                            DatumRezervacije = new DateTime(2023, 6, 15, 21, 57, 41, 554, DateTimeKind.Local).AddTicks(4397),
                             KorisnikId = 2,
-                            PaymentId = "null",
+                            PaymentId = "ID003",
                             UslugaId = 1
                         });
                 });
@@ -762,7 +762,7 @@ namespace VeterinarskaStanica.Services.Migrations
                         new
                         {
                             ZaposlenikID = 1,
-                            DatumZaposlenja = new DateTime(2023, 6, 14, 22, 59, 36, 625, DateTimeKind.Local).AddTicks(1533),
+                            DatumZaposlenja = new DateTime(2023, 6, 15, 21, 57, 41, 554, DateTimeKind.Local).AddTicks(4290),
                             Ime = "Ime 1",
                             Plata = 200m,
                             Prezime = "Prezime 1",
@@ -771,7 +771,7 @@ namespace VeterinarskaStanica.Services.Migrations
                         new
                         {
                             ZaposlenikID = 2,
-                            DatumZaposlenja = new DateTime(2023, 6, 14, 22, 59, 36, 625, DateTimeKind.Local).AddTicks(1545),
+                            DatumZaposlenja = new DateTime(2023, 6, 15, 21, 57, 41, 554, DateTimeKind.Local).AddTicks(4304),
                             Ime = "Ime 2",
                             Plata = 1593m,
                             Prezime = "Prezime 2",

@@ -81,8 +81,8 @@ namespace VeterinarskaStanica.Services.Database
 			modelBuilder.Entity<Zaposlenici>().HasData(new Zaposlenici { ZaposlenikID = 1, Ime = "Ime 1", Prezime = "Prezime 1", DatumZaposlenja = DateTime.Now, RadnoMjestoId = 1, Plata = 200 });
 			modelBuilder.Entity<Zaposlenici>().HasData(new Zaposlenici { ZaposlenikID = 2, Ime = "Ime 2", Prezime = "Prezime 2", DatumZaposlenja = DateTime.Now, RadnoMjestoId = 1, Plata = 1593 });
 
-			modelBuilder.Entity<Narudzbe>().HasData(new Narudzbe { NarudzbaId = 1, Datum = DateTime.Now, KorisnikId = 1, BrojNarudzbe = "A111", Otkazano = false, Status = true, PaymentId = "null" });
-			modelBuilder.Entity<Narudzbe>().HasData(new Narudzbe { NarudzbaId = 2, Datum = DateTime.Now, KorisnikId = 2, BrojNarudzbe = "A222", Otkazano = false, Status = true, PaymentId = "null" });
+			modelBuilder.Entity<Narudzbe>().HasData(new Narudzbe { NarudzbaId = 1, Datum = DateTime.Now, KorisnikId = 1, BrojNarudzbe = "A111", Otkazano = false, Status = true, PaymentId = "ID001" });
+			modelBuilder.Entity<Narudzbe>().HasData(new Narudzbe { NarudzbaId = 2, Datum = DateTime.Now, KorisnikId = 2, BrojNarudzbe = "A222", Otkazano = false, Status = true, PaymentId = "ID002" });
 
 			modelBuilder.Entity<NarudzbaStavke>().HasData(new NarudzbaStavke { NarudzbaStavkaId = 1, Kolicina = 20, NarudzbaId = 1, ProizvodId = 1});
 			modelBuilder.Entity<NarudzbaStavke>().HasData(new NarudzbaStavke { NarudzbaStavkaId = 2, Kolicina = 12, NarudzbaId = 2, ProizvodId = 2});
@@ -90,9 +90,9 @@ namespace VeterinarskaStanica.Services.Database
 			modelBuilder.Entity<NarudzbaStavke>().HasData(new NarudzbaStavke { NarudzbaStavkaId = 4, Kolicina = 19, NarudzbaId = 2, ProizvodId = 4 });
 
 
-			modelBuilder.Entity<Rezervacije>().HasData(new Rezervacije { RezervacijeId = 1, DatumRezervacije = DateTime.Now, PaymentId = "null", KorisnikId = 1, UslugaId = 1 });
-			modelBuilder.Entity<Rezervacije>().HasData(new Rezervacije { RezervacijeId = 2, DatumRezervacije = DateTime.Now, PaymentId = "null", KorisnikId = 2, UslugaId = 2 });
-			modelBuilder.Entity<Rezervacije>().HasData(new Rezervacije { RezervacijeId = 3, DatumRezervacije = DateTime.Now, PaymentId = "null", KorisnikId = 2, UslugaId = 1 });
+			modelBuilder.Entity<Rezervacije>().HasData(new Rezervacije { RezervacijeId = 1, DatumRezervacije = DateTime.Now, PaymentId = "ID001", KorisnikId = 1, UslugaId = 1 });
+			modelBuilder.Entity<Rezervacije>().HasData(new Rezervacije { RezervacijeId = 2, DatumRezervacije = DateTime.Now, PaymentId = "ID002", KorisnikId = 2, UslugaId = 2 });
+			modelBuilder.Entity<Rezervacije>().HasData(new Rezervacije { RezervacijeId = 3, DatumRezervacije = DateTime.Now, PaymentId = "ID003", KorisnikId = 2, UslugaId = 1 });
 
 		}
 	}

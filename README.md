@@ -13,7 +13,7 @@
 
 5. After Visual Studio load all of the data, please click on the arrow beside Start button the command ribbon and choose **"Configure Startup Projects.."**.
 
-6. In the next window choose option **"Multiple startup procjets"** and then choose Start option in Action row beside **"VeterinarskaStanica"** and **"VeterinarskaStanica.WinUI"** and then click on OK.
+6. In the next window choose option **"Multiple startup projects"** and then choose Start option in Action row beside **"VeterinarskaStanica"** and **"VeterinarskaStanica.WinUI"** and then click on OK.
 
 7. Now you can start the project by clicking on the **Start button** in command ribbon.
 
@@ -21,7 +21,7 @@
 
 9. Click on the authorize button and enter following credentials: **Username: admin, Password: admin**.
 
-10. Before starting the main application, please go to the following link to activate recommenation system: **"http://localhost:5192/Proizvodi/1/Recommend"**.
+10. Before starting the main application, please go to the following link to activate recommenation system: **"http://localhost:5192/Proizvodi/1/Recommend"**, then reload page once more to get training data.
 
 11. Now you can login to desktop application using credentials: **Username: admin, Password: admin**.
 
@@ -38,7 +38,7 @@
 
 5. When you first start the mobile app you might get error in the terminal about some Facebook file inside the project, please ignore the message, and let the project load to your emulator.
 
-6. Login credential are: **Korisničko ime: admin, Lozinka: admin**.
+6. Login credentials are: **Korisničko ime: admin, Lozinka: admin**.
 
 7. Please be sure that you followed step 10 in the previous instructions before clicking on any of the products in the list.
 
