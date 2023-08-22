@@ -16,7 +16,6 @@ namespace VeterinarskaStanica.WinUI
 		private readonly APIService _api = new APIService("Korisnici");
 		public frmLogin()
 		{
-			//test
 			InitializeComponent();
 			this.CenterToScreen();
 		}
