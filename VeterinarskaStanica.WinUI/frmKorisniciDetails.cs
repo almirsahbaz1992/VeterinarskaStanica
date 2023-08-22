@@ -27,6 +27,8 @@ namespace VeterinarskaStanica.WinUI
 		{
 			InitializeComponent();
 			_model = model;
+			cbStatus.Checked = true;
+			ActiveControl = cbStatus;
 		}
 
 		private async void btnSave_Click(object sender, EventArgs e)
@@ -57,6 +59,14 @@ namespace VeterinarskaStanica.WinUI
 					else
 					{
 							var user = await KorisniciService.Post<Korisnici>(insertRequest);
+							txtIme.Text = "";
+							txtPrezime.Text = "";
+							txtEmail.Text = "";
+							txtTelefon.Text = "";
+							txtUsername.Text = "";
+							txtPassword.Text = "";
+							txtPotvrda.Text = "";
+							cbStatus.Checked = false;
 							MessageBox.Show("Uspješno ste dodali novog korisnika!");
 					}
 
@@ -87,7 +97,10 @@ namespace VeterinarskaStanica.WinUI
 				txtIme.Text = _model.Ime;
 				txtPrezime.Text = _model.Prezime;
 				txtEmail.Text = _model.Email;
+				txtEmail.ReadOnly = true;
+				txtTelefon.Text = _model.Telefon;
 				txtUsername.Text = _model.KorisnickoIme;
+				txtUsername.ReadOnly = true;
 				cbStatus.Checked = _model.Status.GetValueOrDefault(false);
 			}
 		}

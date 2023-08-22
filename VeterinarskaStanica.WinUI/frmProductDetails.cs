@@ -32,7 +32,8 @@ namespace VeterinarskaStanica.WinUI
 		{
 			InitializeComponent();
 			_model = model;
-		}
+			ActiveControl = btnSlika;
+       }
 
 		private async void btnSacuvaj_Click(object sender, EventArgs e)
 		{
@@ -92,11 +93,27 @@ namespace VeterinarskaStanica.WinUI
 			{
 				cbVrste.SelectedItem = _model.Status.GetValueOrDefault(false);
 				cbJediniceMjere.SelectedItem = _model.Status.GetValueOrDefault(false);
+				txtNaziv.Text = _model.Naziv;
 				txtSifra.Text = _model.Sifra;
-			}
+				txtSifra.ReadOnly = true;
+                txtCijena.Text = _model.Cijena.ToString();
+				rtbOpis.Text = _model.Opis;
+				cbVrste.Enabled = false;
+                image.Image = ByteToImage(_model.Slika);
+            }
 		}
 
-		private async Task LoadVrste()
+        public static Bitmap ByteToImage(byte[] blob)
+        {
+            MemoryStream mStream = new MemoryStream();
+            byte[] pData = blob;
+            mStream.Write(pData, 0, Convert.ToInt32(pData.Length));
+            Bitmap bm = new Bitmap(mStream, false);
+            mStream.Dispose();
+            return bm;
+        }
+
+        private async Task LoadVrste()
 		{
 			var roles = await VrsteService.Get<List<VrstaProizvoda>>();
 			cbVrste.DataSource = roles;

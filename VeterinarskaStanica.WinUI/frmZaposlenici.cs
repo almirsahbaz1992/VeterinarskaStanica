@@ -25,6 +25,7 @@ namespace VeterinarskaStanica.WinUI
 		{
 			InitializeComponent();
 			_model = model;
+			ActiveControl = btnSave;
 		}
 
 		private void txtIme_Validating(object sender, CancelEventArgs e)
@@ -125,7 +126,10 @@ namespace VeterinarskaStanica.WinUI
 			if (_model != null)
 			{
 				txtIme.Text = _model.Ime;
+				txtPrezime.Text = _model.Prezime;
+				txtPlata.Text = _model.Plata.ToString();
 				dtDatum.Value = _model.DatumZaposlenja;
+				dtDatum.Enabled = false;
 				
 			}
 		}

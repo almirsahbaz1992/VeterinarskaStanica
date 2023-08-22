@@ -40,9 +40,9 @@ namespace VeterinarskaStanica.WinUI
 		private void dgProizvodi_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
 		{
 			var item = dgProizvodi.SelectedRows[0].DataBoundItem as Proizvodi;
-			frmProductDetails frm = new frmProductDetails(item);
+			frmProductDetails frm = new frmProductDetails(item);	
 			frm.ShowDialog();
-		}
+        }
 
 		private void txtNaziv_KeyDown(object sender, KeyEventArgs e)
 		{
