@@ -59,15 +59,24 @@ namespace VeterinarskaStanica.WinUI
 					else
 					{
 							var user = await KorisniciService.Post<Korisnici>(insertRequest);
-							txtIme.Text = "";
-							txtPrezime.Text = "";
-							txtEmail.Text = "";
-							txtTelefon.Text = "";
-							txtUsername.Text = "";
-							txtPassword.Text = "";
-							txtPotvrda.Text = "";
-							cbStatus.Checked = false;
-							MessageBox.Show("Uspješno ste dodali novog korisnika!");
+							if(user == null)
+							{
+								txtEmail.Text = "";
+								txtUsername.Text = "";
+							}
+							else
+							{
+								txtIme.Text = "";
+								txtPrezime.Text = "";
+								txtEmail.Text = "";
+								txtTelefon.Text = "";
+								txtUsername.Text = "";
+								txtPassword.Text = "";
+								txtPotvrda.Text = "";
+								cbStatus.Checked = false;
+								MessageBox.Show("Uspješno ste dodali novog korisnika!");
+							}
+
 					}
 
 				}

@@ -105,6 +105,9 @@ namespace VeterinarskaStanica.WinUI
 					Plata = float.Parse(txtPlata.Text)
 				};
 				var product = await ZaposleniciService.Post<Zaposlenici>(insertRequest);
+				txtIme.Text = "";
+				txtPrezime.Text = "";
+				txtPlata.Text = "";
 				MessageBox.Show("Uspješno ste dodali novog zaposlenika!");
 			}
 			else

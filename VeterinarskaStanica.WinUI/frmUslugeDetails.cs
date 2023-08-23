@@ -56,6 +56,10 @@ namespace VeterinarskaStanica.WinUI
 						StateMachine = "draft"
 					};
 					var product = await UslugeService.Post<Usluge>(insertRequest);
+					txtNaziv.Text = "";
+					txtSifra.Text = "";
+					txtCijena.Text = "";
+					image.Image = null;
 					MessageBox.Show("Uspješno ste dodali novu uslugu!");
 				}
 				else

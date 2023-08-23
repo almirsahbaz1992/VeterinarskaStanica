@@ -59,8 +59,13 @@ namespace VeterinarskaStanica.WinUI
 						VrstaId = vrsteList.VrstaId,
 						JedinicaMjereId = jediniceMjereList.JedinicaMjereId
 					};
-					var product = await ProizvodiService.Post<Proizvodi>(insertRequest);
-					MessageBox.Show("Uspješno ste dodali novi proizvod!");
+                        var product = await ProizvodiService.Post<Proizvodi>(insertRequest);
+						txtNaziv.Text = "";
+						txtSifra.Text = "";
+						txtCijena.Text = "";
+						image.Image = null;
+						rtbOpis.Text = "";
+                        MessageBox.Show("Uspješno ste dodali novi proizvod!");
 				}
 				else
 				{

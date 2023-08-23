@@ -73,7 +73,7 @@ using (var Scope = app.Services.CreateScope())
 if (app.Environment.IsDevelopment())
 {
 	app.UseSwagger();
-	app.UseSwaggerUI();
+    app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();

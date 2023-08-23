@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,13 @@ namespace VeterinarskaStanica.WinUI
 		private readonly APIService _api = new APIService("Korisnici");
 		public frmLogin()
 		{
-			InitializeComponent();
+            ProcessStartInfo psInfo = new ProcessStartInfo
+            {
+                FileName = "https://localhost:7172/Proizvodi/1/Recommend",
+                UseShellExecute = true
+            };
+            Process.Start(psInfo);
+            InitializeComponent();
 			this.CenterToScreen();
 		}
 		private async void btnLogin_Click(object sender, EventArgs e)

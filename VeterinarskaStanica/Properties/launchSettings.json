@@ -1,14 +1,14 @@
 {
   "profiles": {
     "VeterinarskaStanica": {
-      "commandName": "Project",
-      "launchBrowser": true,
-      "launchUrl": "swagger",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      "dotnetRunMessages": true,
-      "applicationUrl": "https://localhost:7172;http://localhost:5051"
+        "commandName": "Project",
+        "launchBrowser": true,
+        "launchUrl": "swagger",
+        "environmentVariables": {
+            "ASPNETCORE_ENVIRONMENT": "Development"
+        },
+        "dotnetRunMessages": true,
+        "applicationUrl": "https://localhost:7172;http://localhost:5051"
     },
     "IIS Express": {
       "commandName": "IISExpress",
