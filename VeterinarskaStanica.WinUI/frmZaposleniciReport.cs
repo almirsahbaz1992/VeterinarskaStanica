@@ -12,31 +12,30 @@ using System.Windows.Forms;
 
 namespace VeterinarskaStanica.WinUI
 {
-    public partial class frmKorisniciReport : Form
+    public partial class frmZaposleniciReport : Form
     {
-        public frmKorisniciReport()
+        public frmZaposleniciReport()
         {
             InitializeComponent();
         }
 
-        private void frmKorisniciReport_Load(object sender, EventArgs e)
+        private void frmZaposleniciReport_Load(object sender, EventArgs e)
         {
-            KorisniciSet korisniciSet = new KorisniciSet();
+            ZaposleniciSet zaposleniciSet = new ZaposleniciSet();
             string connection = @"Data Source=localhost, 1401;Initial Catalog=VeterinarskaStanica; user=sa; password=QWElkj132!; TrustServerCertificate=true";
-            string query = @"SELECT Ime, Prezime, Email, KorisnickoIme, Telefon, Status FROM Korisnici";
+            string query = @"SELECT Ime, Prezime, RadnoMjestoID, DatumZaposlenja, Plata FROM Zaposlenici";
 
             SqlConnection sqlConnection = new SqlConnection(connection);
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
-            adapter.Fill(korisniciSet, korisniciSet.Tables[0].TableName);
+            adapter.Fill(zaposleniciSet, zaposleniciSet.Tables[0].TableName);
 
-            ReportDataSource ds = new ReportDataSource("KorisniciReport", korisniciSet.Tables[0]);
+            ReportDataSource ds = new ReportDataSource("ZaposleniciReport", zaposleniciSet.Tables[0]);
 
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(ds);
             reportViewer1.LocalReport.Refresh();
-            reportViewer1.LocalReport.ReportEmbeddedResource = "VeterinarskaStanica.WinUI.KorisniciReport.rdlc";
+            reportViewer1.LocalReport.ReportEmbeddedResource = "VeterinarskaStanica.WinUI.ZaposleniciReport.rdlc";
             reportViewer1.RefreshReport();
-
         }
     }
 }

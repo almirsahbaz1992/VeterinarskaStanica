@@ -9,16 +9,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="KorisniciReport.rdlc" />
     <None Remove="NarudzbeReport.rdlc" />
     <None Remove="NarudzbeSet.xsd" />
+    <None Remove="ProizvodiReport.rdlc" />
+    <None Remove="UslugeReport.rdlc" />
+    <None Remove="ZaposleniciReport.rdlc" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="KorisniciReport.rdlc" />
     <EmbeddedResource Include="NarudzbeReport.rdlc" />
     <EmbeddedResource Include="NarudzbeSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>NarudzbeSet.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ProizvodiReport.rdlc" />
+    <EmbeddedResource Include="UslugeReport.rdlc" />
+    <EmbeddedResource Include="ZaposleniciReport.rdlc" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,10 +43,20 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="KorisniciSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>KorisniciSet.xsd</DependentUpon>
+    </Compile>
     <Compile Update="NarudzbeSet.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>NarudzbeSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="ProizvodiSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ProizvodiSet.xsd</DependentUpon>
     </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -50,6 +68,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Update="UslugeSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>UslugeSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="ZaposleniciSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ZaposleniciSet.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -60,9 +88,25 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="KorisniciSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>KorisniciSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="ProizvodiSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProizvodiSet.Designer.cs</LastGenOutput>
+    </None>
     <None Update="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="UslugeSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UslugeSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="ZaposleniciSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZaposleniciSet.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
 

@@ -54,7 +54,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>PaleTurquoise</BackgroundColor>
+                        <BackgroundColor>Turquoise</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -89,7 +89,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>PaleTurquoise</BackgroundColor>
+                        <BackgroundColor>Turquoise</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -124,7 +124,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>PaleTurquoise</BackgroundColor>
+                        <BackgroundColor>Turquoise</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -159,7 +159,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>PaleTurquoise</BackgroundColor>
+                        <BackgroundColor>Turquoise</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -194,7 +194,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>PaleTurquoise</BackgroundColor>
+                        <BackgroundColor>Turquoise</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -229,7 +229,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>PaleTurquoise</BackgroundColor>
+                        <BackgroundColor>Turquoise</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -462,7 +462,7 @@
         <DataSetName>NarudzbeReport</DataSetName>
         <Top>1.19803cm</Top>
         <Height>1.80763cm</Height>
-        <Width>15.63147cm</Width>
+        <Width>15.63146cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -496,18 +496,6 @@
               </TextRuns>
               <Style />
             </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value />
-                  <Style>
-                    <FontSize>16pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox13</rd:DefaultName>
           <Top>0.21167cm</Top>
@@ -518,7 +506,7 @@
             <Border>
               <Style>None</Style>
             </Border>
-            <BackgroundColor>PaleTurquoise</BackgroundColor>
+            <BackgroundColor>Turquoise</BackgroundColor>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
             <PaddingTop>2pt</PaddingTop>

@@ -1,6 +1,6 @@
 ﻿namespace VeterinarskaStanica.WinUI
 {
-    partial class frmNarudzbeReport
+    partial class frmProizvodiReport
     {
         /// <summary>
         /// Required designer variable.
@@ -46,15 +46,15 @@
             sqlCommand1.CommandTimeout = 30;
             sqlCommand1.EnableOptimizedParameterBinding = false;
             // 
-            // frmNarudzbeReport
+            // frmProizvodiReport
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(782, 374);
+            ClientSize = new Size(800, 450);
             Controls.Add(reportViewer1);
-            Name = "frmNarudzbeReport";
-            Text = "Detaljan prikaz narudžbi";
-            Load += frmNarudzbeReport_Load;
+            Name = "frmProizvodiReport";
+            Text = "Detaljan izvještaj o proizvodima";
+            Load += frmProizvodiReport_Load;
             ResumeLayout(false);
         }
 

@@ -20,17 +20,17 @@ namespace VeterinarskaStanica.WinUI {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("NarudzbeSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("KorisniciSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class NarudzbeSet : global::System.Data.DataSet {
+    public partial class KorisniciSet : global::System.Data.DataSet {
         
-        private DataTable1DataTable tableDataTable1;
+        private KorisniciDataTable tableKorisnici;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public NarudzbeSet() {
+        public KorisniciSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace VeterinarskaStanica.WinUI {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected NarudzbeSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected KorisniciSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace VeterinarskaStanica.WinUI {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["DataTable1"] != null)) {
-                    base.Tables.Add(new DataTable1DataTable(ds.Tables["DataTable1"]));
+                if ((ds.Tables["Korisnici"] != null)) {
+                    base.Tables.Add(new KorisniciDataTable(ds.Tables["Korisnici"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace VeterinarskaStanica.WinUI {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public DataTable1DataTable DataTable1 {
+        public KorisniciDataTable Korisnici {
             get {
-                return this.tableDataTable1;
+                return this.tableKorisnici;
             }
         }
         
@@ -127,7 +127,7 @@ namespace VeterinarskaStanica.WinUI {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            NarudzbeSet cln = ((NarudzbeSet)(base.Clone()));
+            KorisniciSet cln = ((KorisniciSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace VeterinarskaStanica.WinUI {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["DataTable1"] != null)) {
-                    base.Tables.Add(new DataTable1DataTable(ds.Tables["DataTable1"]));
+                if ((ds.Tables["Korisnici"] != null)) {
+                    base.Tables.Add(new KorisniciDataTable(ds.Tables["Korisnici"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace VeterinarskaStanica.WinUI {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableDataTable1 = ((DataTable1DataTable)(base.Tables["DataTable1"]));
+            this.tableKorisnici = ((KorisniciDataTable)(base.Tables["Korisnici"]));
             if ((initTable == true)) {
-                if ((this.tableDataTable1 != null)) {
-                    this.tableDataTable1.InitVars();
+                if ((this.tableKorisnici != null)) {
+                    this.tableKorisnici.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace VeterinarskaStanica.WinUI {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "NarudzbeSet";
+            this.DataSetName = "KorisniciSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/NarudzbeSet.xsd";
+            this.Namespace = "http://tempuri.org/KorisniciSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableDataTable1 = new DataTable1DataTable();
-            base.Tables.Add(this.tableDataTable1);
+            this.tableKorisnici = new KorisniciDataTable();
+            base.Tables.Add(this.tableKorisnici);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeDataTable1() {
+        private bool ShouldSerializeKorisnici() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace VeterinarskaStanica.WinUI {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            NarudzbeSet ds = new NarudzbeSet();
+            KorisniciSet ds = new KorisniciSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,31 +270,33 @@ namespace VeterinarskaStanica.WinUI {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void DataTable1RowChangeEventHandler(object sender, DataTable1RowChangeEvent e);
+        public delegate void KorisniciRowChangeEventHandler(object sender, KorisniciRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DataTable1DataTable : global::System.Data.TypedTableBase<DataTable1Row> {
+        public partial class KorisniciDataTable : global::System.Data.TypedTableBase<KorisniciRow> {
             
-            private global::System.Data.DataColumn columnBrojNarudzbe;
+            private global::System.Data.DataColumn columnIme;
             
-            private global::System.Data.DataColumn columnDatum;
+            private global::System.Data.DataColumn columnPrezime;
+            
+            private global::System.Data.DataColumn columnEmail;
+            
+            private global::System.Data.DataColumn columnKorisnickoIme;
+            
+            private global::System.Data.DataColumn columnTelefon;
             
             private global::System.Data.DataColumn columnStatus;
             
-            private global::System.Data.DataColumn columnOtkazano;
-            
-            private global::System.Data.DataColumn columnPaymentId;
-            
-            private global::System.Data.DataColumn columnKolicina;
+            private global::System.Data.DataColumn columnKorisnikID;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataTable1DataTable() {
-                this.TableName = "DataTable1";
+            public KorisniciDataTable() {
+                this.TableName = "Korisnici";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -302,7 +304,7 @@ namespace VeterinarskaStanica.WinUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal DataTable1DataTable(global::System.Data.DataTable table) {
+            internal KorisniciDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -319,24 +321,48 @@ namespace VeterinarskaStanica.WinUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected DataTable1DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected KorisniciDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn BrojNarudzbeColumn {
+            public global::System.Data.DataColumn ImeColumn {
                 get {
-                    return this.columnBrojNarudzbe;
+                    return this.columnIme;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn DatumColumn {
+            public global::System.Data.DataColumn PrezimeColumn {
                 get {
-                    return this.columnDatum;
+                    return this.columnPrezime;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn EmailColumn {
+                get {
+                    return this.columnEmail;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn KorisnickoImeColumn {
+                get {
+                    return this.columnKorisnickoIme;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TelefonColumn {
+                get {
+                    return this.columnTelefon;
                 }
             }
             
@@ -350,25 +376,9 @@ namespace VeterinarskaStanica.WinUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn OtkazanoColumn {
+            public global::System.Data.DataColumn KorisnikIDColumn {
                 get {
-                    return this.columnOtkazano;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn PaymentIdColumn {
-                get {
-                    return this.columnPaymentId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn KolicinaColumn {
-                get {
-                    return this.columnKolicina;
+                    return this.columnKorisnikID;
                 }
             }
             
@@ -383,50 +393,58 @@ namespace VeterinarskaStanica.WinUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataTable1Row this[int index] {
+            public KorisniciRow this[int index] {
                 get {
-                    return ((DataTable1Row)(this.Rows[index]));
+                    return ((KorisniciRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event DataTable1RowChangeEventHandler DataTable1RowChanging;
+            public event KorisniciRowChangeEventHandler KorisniciRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event DataTable1RowChangeEventHandler DataTable1RowChanged;
+            public event KorisniciRowChangeEventHandler KorisniciRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event DataTable1RowChangeEventHandler DataTable1RowDeleting;
+            public event KorisniciRowChangeEventHandler KorisniciRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event DataTable1RowChangeEventHandler DataTable1RowDeleted;
+            public event KorisniciRowChangeEventHandler KorisniciRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddDataTable1Row(DataTable1Row row) {
+            public void AddKorisniciRow(KorisniciRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataTable1Row AddDataTable1Row(string BrojNarudzbe, System.DateTime Datum, bool Status, bool Otkazano, string PaymentId, int Kolicina) {
-                DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
+            public KorisniciRow AddKorisniciRow(string Ime, string Prezime, string Email, string KorisnickoIme, string Telefon, bool Status) {
+                KorisniciRow rowKorisniciRow = ((KorisniciRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        BrojNarudzbe,
-                        Datum,
+                        Ime,
+                        Prezime,
+                        Email,
+                        KorisnickoIme,
+                        Telefon,
                         Status,
-                        Otkazano,
-                        PaymentId,
-                        Kolicina};
-                rowDataTable1Row.ItemArray = columnValuesArray;
-                this.Rows.Add(rowDataTable1Row);
-                return rowDataTable1Row;
+                        null};
+                rowKorisniciRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowKorisniciRow);
+                return rowKorisniciRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public KorisniciRow FindByKorisnikID(int KorisnikID) {
+                return ((KorisniciRow)(this.Rows.Find(new object[] {
+                            KorisnikID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                DataTable1DataTable cln = ((DataTable1DataTable)(base.Clone()));
+                KorisniciDataTable cln = ((KorisniciDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -434,68 +452,81 @@ namespace VeterinarskaStanica.WinUI {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new DataTable1DataTable();
+                return new KorisniciDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnBrojNarudzbe = base.Columns["BrojNarudzbe"];
-                this.columnDatum = base.Columns["Datum"];
+                this.columnIme = base.Columns["Ime"];
+                this.columnPrezime = base.Columns["Prezime"];
+                this.columnEmail = base.Columns["Email"];
+                this.columnKorisnickoIme = base.Columns["KorisnickoIme"];
+                this.columnTelefon = base.Columns["Telefon"];
                 this.columnStatus = base.Columns["Status"];
-                this.columnOtkazano = base.Columns["Otkazano"];
-                this.columnPaymentId = base.Columns["PaymentId"];
-                this.columnKolicina = base.Columns["Kolicina"];
+                this.columnKorisnikID = base.Columns["KorisnikID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnBrojNarudzbe = new global::System.Data.DataColumn("BrojNarudzbe", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBrojNarudzbe);
-                this.columnDatum = new global::System.Data.DataColumn("Datum", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDatum);
+                this.columnIme = new global::System.Data.DataColumn("Ime", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIme);
+                this.columnPrezime = new global::System.Data.DataColumn("Prezime", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrezime);
+                this.columnEmail = new global::System.Data.DataColumn("Email", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmail);
+                this.columnKorisnickoIme = new global::System.Data.DataColumn("KorisnickoIme", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKorisnickoIme);
+                this.columnTelefon = new global::System.Data.DataColumn("Telefon", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTelefon);
                 this.columnStatus = new global::System.Data.DataColumn("Status", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnStatus);
-                this.columnOtkazano = new global::System.Data.DataColumn("Otkazano", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOtkazano);
-                this.columnPaymentId = new global::System.Data.DataColumn("PaymentId", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPaymentId);
-                this.columnKolicina = new global::System.Data.DataColumn("Kolicina", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnKolicina);
-                this.columnBrojNarudzbe.AllowDBNull = false;
-                this.columnBrojNarudzbe.MaxLength = 50;
-                this.columnDatum.AllowDBNull = false;
+                this.columnKorisnikID = new global::System.Data.DataColumn("KorisnikID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKorisnikID);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnKorisnikID}, true));
+                this.columnIme.AllowDBNull = false;
+                this.columnIme.MaxLength = 50;
+                this.columnPrezime.AllowDBNull = false;
+                this.columnPrezime.MaxLength = 50;
+                this.columnEmail.MaxLength = 100;
+                this.columnKorisnickoIme.AllowDBNull = false;
+                this.columnKorisnickoIme.MaxLength = 50;
+                this.columnTelefon.MaxLength = 20;
                 this.columnStatus.AllowDBNull = false;
-                this.columnPaymentId.AllowDBNull = false;
-                this.columnPaymentId.MaxLength = 50;
-                this.columnKolicina.AllowDBNull = false;
+                this.columnKorisnikID.AutoIncrement = true;
+                this.columnKorisnikID.AutoIncrementSeed = -1;
+                this.columnKorisnikID.AutoIncrementStep = -1;
+                this.columnKorisnikID.AllowDBNull = false;
+                this.columnKorisnikID.ReadOnly = true;
+                this.columnKorisnikID.Unique = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataTable1Row NewDataTable1Row() {
-                return ((DataTable1Row)(this.NewRow()));
+            public KorisniciRow NewKorisniciRow() {
+                return ((KorisniciRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new DataTable1Row(builder);
+                return new KorisniciRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(DataTable1Row);
+                return typeof(KorisniciRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.DataTable1RowChanged != null)) {
-                    this.DataTable1RowChanged(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
+                if ((this.KorisniciRowChanged != null)) {
+                    this.KorisniciRowChanged(this, new KorisniciRowChangeEvent(((KorisniciRow)(e.Row)), e.Action));
                 }
             }
             
@@ -503,8 +534,8 @@ namespace VeterinarskaStanica.WinUI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.DataTable1RowChanging != null)) {
-                    this.DataTable1RowChanging(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
+                if ((this.KorisniciRowChanging != null)) {
+                    this.KorisniciRowChanging(this, new KorisniciRowChangeEvent(((KorisniciRow)(e.Row)), e.Action));
                 }
             }
             
@@ -512,8 +543,8 @@ namespace VeterinarskaStanica.WinUI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.DataTable1RowDeleted != null)) {
-                    this.DataTable1RowDeleted(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
+                if ((this.KorisniciRowDeleted != null)) {
+                    this.KorisniciRowDeleted(this, new KorisniciRowChangeEvent(((KorisniciRow)(e.Row)), e.Action));
                 }
             }
             
@@ -521,14 +552,14 @@ namespace VeterinarskaStanica.WinUI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.DataTable1RowDeleting != null)) {
-                    this.DataTable1RowDeleting(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
+                if ((this.KorisniciRowDeleting != null)) {
+                    this.KorisniciRowDeleting(this, new KorisniciRowChangeEvent(((KorisniciRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveDataTable1Row(DataTable1Row row) {
+            public void RemoveKorisniciRow(KorisniciRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -537,7 +568,7 @@ namespace VeterinarskaStanica.WinUI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                NarudzbeSet ds = new NarudzbeSet();
+                KorisniciSet ds = new KorisniciSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -555,7 +586,7 @@ namespace VeterinarskaStanica.WinUI {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "DataTable1DataTable";
+                attribute2.FixedValue = "KorisniciDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -599,36 +630,79 @@ namespace VeterinarskaStanica.WinUI {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class DataTable1Row : global::System.Data.DataRow {
+        public partial class KorisniciRow : global::System.Data.DataRow {
             
-            private DataTable1DataTable tableDataTable1;
+            private KorisniciDataTable tableKorisnici;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal DataTable1Row(global::System.Data.DataRowBuilder rb) : 
+            internal KorisniciRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableDataTable1 = ((DataTable1DataTable)(this.Table));
+                this.tableKorisnici = ((KorisniciDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string BrojNarudzbe {
+            public string Ime {
                 get {
-                    return ((string)(this[this.tableDataTable1.BrojNarudzbeColumn]));
+                    return ((string)(this[this.tableKorisnici.ImeColumn]));
                 }
                 set {
-                    this[this.tableDataTable1.BrojNarudzbeColumn] = value;
+                    this[this.tableKorisnici.ImeColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime Datum {
+            public string Prezime {
                 get {
-                    return ((global::System.DateTime)(this[this.tableDataTable1.DatumColumn]));
+                    return ((string)(this[this.tableKorisnici.PrezimeColumn]));
                 }
                 set {
-                    this[this.tableDataTable1.DatumColumn] = value;
+                    this[this.tableKorisnici.PrezimeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Email {
+                get {
+                    try {
+                        return ((string)(this[this.tableKorisnici.EmailColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Email\' in table \'Korisnici\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableKorisnici.EmailColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string KorisnickoIme {
+                get {
+                    return ((string)(this[this.tableKorisnici.KorisnickoImeColumn]));
+                }
+                set {
+                    this[this.tableKorisnici.KorisnickoImeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Telefon {
+                get {
+                    try {
+                        return ((string)(this[this.tableKorisnici.TelefonColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Telefon\' in table \'Korisnici\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableKorisnici.TelefonColumn] = value;
                 }
             }
             
@@ -636,61 +710,46 @@ namespace VeterinarskaStanica.WinUI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Status {
                 get {
-                    return ((bool)(this[this.tableDataTable1.StatusColumn]));
+                    return ((bool)(this[this.tableKorisnici.StatusColumn]));
                 }
                 set {
-                    this[this.tableDataTable1.StatusColumn] = value;
+                    this[this.tableKorisnici.StatusColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Otkazano {
+            public int KorisnikID {
                 get {
-                    try {
-                        return ((bool)(this[this.tableDataTable1.OtkazanoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Otkazano\' in table \'DataTable1\' is DBNull.", e);
-                    }
+                    return ((int)(this[this.tableKorisnici.KorisnikIDColumn]));
                 }
                 set {
-                    this[this.tableDataTable1.OtkazanoColumn] = value;
+                    this[this.tableKorisnici.KorisnikIDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string PaymentId {
-                get {
-                    return ((string)(this[this.tableDataTable1.PaymentIdColumn]));
-                }
-                set {
-                    this[this.tableDataTable1.PaymentIdColumn] = value;
-                }
+            public bool IsEmailNull() {
+                return this.IsNull(this.tableKorisnici.EmailColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Kolicina {
-                get {
-                    return ((int)(this[this.tableDataTable1.KolicinaColumn]));
-                }
-                set {
-                    this[this.tableDataTable1.KolicinaColumn] = value;
-                }
+            public void SetEmailNull() {
+                this[this.tableKorisnici.EmailColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsOtkazanoNull() {
-                return this.IsNull(this.tableDataTable1.OtkazanoColumn);
+            public bool IsTelefonNull() {
+                return this.IsNull(this.tableKorisnici.TelefonColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetOtkazanoNull() {
-                this[this.tableDataTable1.OtkazanoColumn] = global::System.Convert.DBNull;
+            public void SetTelefonNull() {
+                this[this.tableKorisnici.TelefonColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -698,22 +757,22 @@ namespace VeterinarskaStanica.WinUI {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class DataTable1RowChangeEvent : global::System.EventArgs {
+        public class KorisniciRowChangeEvent : global::System.EventArgs {
             
-            private DataTable1Row eventRow;
+            private KorisniciRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataTable1RowChangeEvent(DataTable1Row row, global::System.Data.DataRowAction action) {
+            public KorisniciRowChangeEvent(KorisniciRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataTable1Row Row {
+            public KorisniciRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -729,7 +788,7 @@ namespace VeterinarskaStanica.WinUI {
         }
     }
 }
-namespace VeterinarskaStanica.WinUI.NarudzbeSetTableAdapters {
+namespace VeterinarskaStanica.WinUI.KorisniciSetTableAdapters {
     
     
     /// <summary>
@@ -741,7 +800,7 @@ namespace VeterinarskaStanica.WinUI.NarudzbeSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class DataTable1TableAdapter : global::System.ComponentModel.Component {
+    public partial class KorisniciTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -755,7 +814,7 @@ namespace VeterinarskaStanica.WinUI.NarudzbeSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public DataTable1TableAdapter() {
+        public KorisniciTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -852,22 +911,57 @@ namespace VeterinarskaStanica.WinUI.NarudzbeSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "DataTable1";
-            tableMapping.ColumnMappings.Add("BrojNarudzbe", "BrojNarudzbe");
-            tableMapping.ColumnMappings.Add("Datum", "Datum");
+            tableMapping.DataSetTable = "Korisnici";
+            tableMapping.ColumnMappings.Add("Ime", "Ime");
+            tableMapping.ColumnMappings.Add("Prezime", "Prezime");
+            tableMapping.ColumnMappings.Add("Email", "Email");
+            tableMapping.ColumnMappings.Add("KorisnickoIme", "KorisnickoIme");
+            tableMapping.ColumnMappings.Add("Telefon", "Telefon");
             tableMapping.ColumnMappings.Add("Status", "Status");
-            tableMapping.ColumnMappings.Add("Otkazano", "Otkazano");
-            tableMapping.ColumnMappings.Add("PaymentId", "PaymentId");
-            tableMapping.ColumnMappings.Add("Kolicina", "Kolicina");
+            tableMapping.ColumnMappings.Add("KorisnikID", "KorisnikID");
             this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Korisnici] WHERE (([Ime] = @Original_Ime) AND ([Prezime] = @Original_Prezime) AND ((@IsNull_Email = 1 AND [Email] IS NULL) OR ([Email] = @Original_Email)) AND ([KorisnickoIme] = @Original_KorisnickoIme) AND ((@IsNull_Telefon = 1 AND [Telefon] IS NULL) OR ([Telefon] = @Original_Telefon)) AND ([Status] = @Original_Status) AND ([KorisnikID] = @Original_KorisnikID))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ime", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Prezime", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prezime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Email", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_KorisnickoIme", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KorisnickoIme", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Telefon", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Telefon", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Telefon", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Telefon", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Status", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_KorisnikID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KorisnikID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Korisnici] SET [Ime] = @Ime, [Prezime] = @Prezime, [Email] = @Email, [KorisnickoIme] = @KorisnickoIme, [Telefon] = @Telefon, [Status] = @Status WHERE (([Ime] = @Original_Ime) AND ([Prezime] = @Original_Prezime) AND ((@IsNull_Email = 1 AND [Email] IS NULL) OR ([Email] = @Original_Email)) AND ([KorisnickoIme] = @Original_KorisnickoIme) AND ((@IsNull_Telefon = 1 AND [Telefon] IS NULL) OR ([Telefon] = @Original_Telefon)) AND ([Status] = @Original_Status) AND ([KorisnikID] = @Original_KorisnikID));
+SELECT Ime, Prezime, Email, KorisnickoIme, Telefon, Status, KorisnikID FROM Korisnici WHERE (KorisnikID = @KorisnikID)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ime", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Prezime", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prezime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KorisnickoIme", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KorisnickoIme", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Telefon", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Telefon", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ime", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Prezime", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prezime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Email", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_KorisnickoIme", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KorisnickoIme", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Telefon", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Telefon", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Telefon", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Telefon", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Status", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_KorisnikID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KorisnikID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KorisnikID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "KorisnikID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=\"localhost, 1401\";Initial Catalog=VeterinarskaStanica;Persist Securit" +
-                "y Info=True;User ID=sa;Password=QWElkj132!";
+            this._connection.ConnectionString = "Data Source=localhost,1401;Initial Catalog=VeterinarskaStanica;Persist Security I" +
+                "nfo=True;User ID=sa;Password=QWElkj132!";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -876,9 +970,8 @@ namespace VeterinarskaStanica.WinUI.NarudzbeSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Narudzbe.BrojNarudzbe, Narudzbe.Datum, Narudzbe.Status, Narudzbe.Otkazano," +
-                " Narudzbe.PaymentId, NarudzbaStavke.Kolicina\nFROM     Narudzbe INNER JOIN\n      " +
-                "            NarudzbaStavke ON Narudzbe.NarudzbaID = NarudzbaStavke.NarudzbaID";
+            this._commandCollection[0].CommandText = "SELECT Ime, Prezime, Email, KorisnickoIme, Telefon, Status, KorisnikID FROM Koris" +
+                "nici";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -886,7 +979,7 @@ namespace VeterinarskaStanica.WinUI.NarudzbeSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(NarudzbeSet.DataTable1DataTable dataTable) {
+        public virtual int Fill(KorisniciSet.KorisniciDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -899,11 +992,40 @@ namespace VeterinarskaStanica.WinUI.NarudzbeSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual NarudzbeSet.DataTable1DataTable GetData() {
+        public virtual KorisniciSet.KorisniciDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            NarudzbeSet.DataTable1DataTable dataTable = new NarudzbeSet.DataTable1DataTable();
+            KorisniciSet.KorisniciDataTable dataTable = new KorisniciSet.KorisniciDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(KorisniciSet.KorisniciDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(KorisniciSet dataSet) {
+            return this.Adapter.Update(dataSet, "Korisnici");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
         }
     }
     
@@ -919,6 +1041,8 @@ namespace VeterinarskaStanica.WinUI.NarudzbeSetTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
+        private KorisniciTableAdapter _korisniciTableAdapter;
+        
         private bool _backupDataSetBeforeUpdate;
         
         private global::System.Data.IDbConnection _connection;
@@ -931,6 +1055,20 @@ namespace VeterinarskaStanica.WinUI.NarudzbeSetTableAdapters {
             }
             set {
                 this._updateOrder = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public KorisniciTableAdapter KorisniciTableAdapter {
+            get {
+                return this._korisniciTableAdapter;
+            }
+            set {
+                this._korisniciTableAdapter = value;
             }
         }
         
@@ -953,6 +1091,10 @@ namespace VeterinarskaStanica.WinUI.NarudzbeSetTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
+                if (((this._korisniciTableAdapter != null) 
+                            && (this._korisniciTableAdapter.Connection != null))) {
+                    return this._korisniciTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -966,6 +1108,9 @@ namespace VeterinarskaStanica.WinUI.NarudzbeSetTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
+                if ((this._korisniciTableAdapter != null)) {
+                    count = (count + 1);
+                }
                 return count;
             }
         }
@@ -975,8 +1120,17 @@ namespace VeterinarskaStanica.WinUI.NarudzbeSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(NarudzbeSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(KorisniciSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._korisniciTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Korisnici.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._korisniciTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -985,8 +1139,16 @@ namespace VeterinarskaStanica.WinUI.NarudzbeSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(NarudzbeSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(KorisniciSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._korisniciTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Korisnici.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._korisniciTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -995,8 +1157,16 @@ namespace VeterinarskaStanica.WinUI.NarudzbeSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(NarudzbeSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(KorisniciSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._korisniciTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Korisnici.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._korisniciTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             return result;
         }
         
@@ -1029,12 +1199,17 @@ namespace VeterinarskaStanica.WinUI.NarudzbeSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(NarudzbeSet dataSet) {
+        public virtual int UpdateAll(KorisniciSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
+            }
+            if (((this._korisniciTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._korisniciTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
             }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
@@ -1068,6 +1243,15 @@ namespace VeterinarskaStanica.WinUI.NarudzbeSetTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
+                if ((this._korisniciTableAdapter != null)) {
+                    revertConnections.Add(this._korisniciTableAdapter, this._korisniciTableAdapter.Connection);
+                    this._korisniciTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._korisniciTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._korisniciTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._korisniciTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._korisniciTableAdapter.Adapter);
+                    }
+                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -1125,6 +1309,10 @@ namespace VeterinarskaStanica.WinUI.NarudzbeSetTableAdapters {
             finally {
                 if (workConnOpened) {
                     workConnection.Close();
+                }
+                if ((this._korisniciTableAdapter != null)) {
+                    this._korisniciTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._korisniciTableAdapter]));
+                    this._korisniciTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

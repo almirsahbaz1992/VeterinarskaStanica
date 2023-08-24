@@ -20,17 +20,17 @@ namespace VeterinarskaStanica.WinUI {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("NarudzbeSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("UslugeSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class NarudzbeSet : global::System.Data.DataSet {
+    public partial class UslugeSet : global::System.Data.DataSet {
         
-        private DataTable1DataTable tableDataTable1;
+        private UslugeDataTable tableUsluge;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public NarudzbeSet() {
+        public UslugeSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace VeterinarskaStanica.WinUI {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected NarudzbeSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected UslugeSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace VeterinarskaStanica.WinUI {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["DataTable1"] != null)) {
-                    base.Tables.Add(new DataTable1DataTable(ds.Tables["DataTable1"]));
+                if ((ds.Tables["Usluge"] != null)) {
+                    base.Tables.Add(new UslugeDataTable(ds.Tables["Usluge"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace VeterinarskaStanica.WinUI {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public DataTable1DataTable DataTable1 {
+        public UslugeDataTable Usluge {
             get {
-                return this.tableDataTable1;
+                return this.tableUsluge;
             }
         }
         
@@ -127,7 +127,7 @@ namespace VeterinarskaStanica.WinUI {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            NarudzbeSet cln = ((NarudzbeSet)(base.Clone()));
+            UslugeSet cln = ((UslugeSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace VeterinarskaStanica.WinUI {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["DataTable1"] != null)) {
-                    base.Tables.Add(new DataTable1DataTable(ds.Tables["DataTable1"]));
+                if ((ds.Tables["Usluge"] != null)) {
+                    base.Tables.Add(new UslugeDataTable(ds.Tables["Usluge"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace VeterinarskaStanica.WinUI {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableDataTable1 = ((DataTable1DataTable)(base.Tables["DataTable1"]));
+            this.tableUsluge = ((UslugeDataTable)(base.Tables["Usluge"]));
             if ((initTable == true)) {
-                if ((this.tableDataTable1 != null)) {
-                    this.tableDataTable1.InitVars();
+                if ((this.tableUsluge != null)) {
+                    this.tableUsluge.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace VeterinarskaStanica.WinUI {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "NarudzbeSet";
+            this.DataSetName = "UslugeSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/NarudzbeSet.xsd";
+            this.Namespace = "http://tempuri.org/UslugeSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableDataTable1 = new DataTable1DataTable();
-            base.Tables.Add(this.tableDataTable1);
+            this.tableUsluge = new UslugeDataTable();
+            base.Tables.Add(this.tableUsluge);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeDataTable1() {
+        private bool ShouldSerializeUsluge() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace VeterinarskaStanica.WinUI {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            NarudzbeSet ds = new NarudzbeSet();
+            UslugeSet ds = new UslugeSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,31 +270,27 @@ namespace VeterinarskaStanica.WinUI {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void DataTable1RowChangeEventHandler(object sender, DataTable1RowChangeEvent e);
+        public delegate void UslugeRowChangeEventHandler(object sender, UslugeRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DataTable1DataTable : global::System.Data.TypedTableBase<DataTable1Row> {
+        public partial class UslugeDataTable : global::System.Data.TypedTableBase<UslugeRow> {
             
-            private global::System.Data.DataColumn columnBrojNarudzbe;
+            private global::System.Data.DataColumn columnNaziv;
             
-            private global::System.Data.DataColumn columnDatum;
+            private global::System.Data.DataColumn columnSifra;
+            
+            private global::System.Data.DataColumn columnCijena;
             
             private global::System.Data.DataColumn columnStatus;
             
-            private global::System.Data.DataColumn columnOtkazano;
-            
-            private global::System.Data.DataColumn columnPaymentId;
-            
-            private global::System.Data.DataColumn columnKolicina;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataTable1DataTable() {
-                this.TableName = "DataTable1";
+            public UslugeDataTable() {
+                this.TableName = "Usluge";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -302,7 +298,7 @@ namespace VeterinarskaStanica.WinUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal DataTable1DataTable(global::System.Data.DataTable table) {
+            internal UslugeDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -319,24 +315,32 @@ namespace VeterinarskaStanica.WinUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected DataTable1DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected UslugeDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn BrojNarudzbeColumn {
+            public global::System.Data.DataColumn NazivColumn {
                 get {
-                    return this.columnBrojNarudzbe;
+                    return this.columnNaziv;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn DatumColumn {
+            public global::System.Data.DataColumn SifraColumn {
                 get {
-                    return this.columnDatum;
+                    return this.columnSifra;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CijenaColumn {
+                get {
+                    return this.columnCijena;
                 }
             }
             
@@ -345,30 +349,6 @@ namespace VeterinarskaStanica.WinUI {
             public global::System.Data.DataColumn StatusColumn {
                 get {
                     return this.columnStatus;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn OtkazanoColumn {
-                get {
-                    return this.columnOtkazano;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn PaymentIdColumn {
-                get {
-                    return this.columnPaymentId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn KolicinaColumn {
-                get {
-                    return this.columnKolicina;
                 }
             }
             
@@ -383,50 +363,48 @@ namespace VeterinarskaStanica.WinUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataTable1Row this[int index] {
+            public UslugeRow this[int index] {
                 get {
-                    return ((DataTable1Row)(this.Rows[index]));
+                    return ((UslugeRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event DataTable1RowChangeEventHandler DataTable1RowChanging;
+            public event UslugeRowChangeEventHandler UslugeRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event DataTable1RowChangeEventHandler DataTable1RowChanged;
+            public event UslugeRowChangeEventHandler UslugeRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event DataTable1RowChangeEventHandler DataTable1RowDeleting;
+            public event UslugeRowChangeEventHandler UslugeRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event DataTable1RowChangeEventHandler DataTable1RowDeleted;
+            public event UslugeRowChangeEventHandler UslugeRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddDataTable1Row(DataTable1Row row) {
+            public void AddUslugeRow(UslugeRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataTable1Row AddDataTable1Row(string BrojNarudzbe, System.DateTime Datum, bool Status, bool Otkazano, string PaymentId, int Kolicina) {
-                DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
+            public UslugeRow AddUslugeRow(string Naziv, string Sifra, decimal Cijena, bool Status) {
+                UslugeRow rowUslugeRow = ((UslugeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        BrojNarudzbe,
-                        Datum,
-                        Status,
-                        Otkazano,
-                        PaymentId,
-                        Kolicina};
-                rowDataTable1Row.ItemArray = columnValuesArray;
-                this.Rows.Add(rowDataTable1Row);
-                return rowDataTable1Row;
+                        Naziv,
+                        Sifra,
+                        Cijena,
+                        Status};
+                rowUslugeRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowUslugeRow);
+                return rowUslugeRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                DataTable1DataTable cln = ((DataTable1DataTable)(base.Clone()));
+                UslugeDataTable cln = ((UslugeDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -434,68 +412,61 @@ namespace VeterinarskaStanica.WinUI {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new DataTable1DataTable();
+                return new UslugeDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnBrojNarudzbe = base.Columns["BrojNarudzbe"];
-                this.columnDatum = base.Columns["Datum"];
+                this.columnNaziv = base.Columns["Naziv"];
+                this.columnSifra = base.Columns["Sifra"];
+                this.columnCijena = base.Columns["Cijena"];
                 this.columnStatus = base.Columns["Status"];
-                this.columnOtkazano = base.Columns["Otkazano"];
-                this.columnPaymentId = base.Columns["PaymentId"];
-                this.columnKolicina = base.Columns["Kolicina"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnBrojNarudzbe = new global::System.Data.DataColumn("BrojNarudzbe", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBrojNarudzbe);
-                this.columnDatum = new global::System.Data.DataColumn("Datum", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDatum);
+                this.columnNaziv = new global::System.Data.DataColumn("Naziv", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNaziv);
+                this.columnSifra = new global::System.Data.DataColumn("Sifra", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSifra);
+                this.columnCijena = new global::System.Data.DataColumn("Cijena", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCijena);
                 this.columnStatus = new global::System.Data.DataColumn("Status", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnStatus);
-                this.columnOtkazano = new global::System.Data.DataColumn("Otkazano", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOtkazano);
-                this.columnPaymentId = new global::System.Data.DataColumn("PaymentId", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPaymentId);
-                this.columnKolicina = new global::System.Data.DataColumn("Kolicina", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnKolicina);
-                this.columnBrojNarudzbe.AllowDBNull = false;
-                this.columnBrojNarudzbe.MaxLength = 50;
-                this.columnDatum.AllowDBNull = false;
+                this.columnNaziv.AllowDBNull = false;
+                this.columnNaziv.MaxLength = 50;
+                this.columnSifra.AllowDBNull = false;
+                this.columnSifra.MaxLength = 20;
+                this.columnCijena.AllowDBNull = false;
                 this.columnStatus.AllowDBNull = false;
-                this.columnPaymentId.AllowDBNull = false;
-                this.columnPaymentId.MaxLength = 50;
-                this.columnKolicina.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataTable1Row NewDataTable1Row() {
-                return ((DataTable1Row)(this.NewRow()));
+            public UslugeRow NewUslugeRow() {
+                return ((UslugeRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new DataTable1Row(builder);
+                return new UslugeRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(DataTable1Row);
+                return typeof(UslugeRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.DataTable1RowChanged != null)) {
-                    this.DataTable1RowChanged(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
+                if ((this.UslugeRowChanged != null)) {
+                    this.UslugeRowChanged(this, new UslugeRowChangeEvent(((UslugeRow)(e.Row)), e.Action));
                 }
             }
             
@@ -503,8 +474,8 @@ namespace VeterinarskaStanica.WinUI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.DataTable1RowChanging != null)) {
-                    this.DataTable1RowChanging(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
+                if ((this.UslugeRowChanging != null)) {
+                    this.UslugeRowChanging(this, new UslugeRowChangeEvent(((UslugeRow)(e.Row)), e.Action));
                 }
             }
             
@@ -512,8 +483,8 @@ namespace VeterinarskaStanica.WinUI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.DataTable1RowDeleted != null)) {
-                    this.DataTable1RowDeleted(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
+                if ((this.UslugeRowDeleted != null)) {
+                    this.UslugeRowDeleted(this, new UslugeRowChangeEvent(((UslugeRow)(e.Row)), e.Action));
                 }
             }
             
@@ -521,14 +492,14 @@ namespace VeterinarskaStanica.WinUI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.DataTable1RowDeleting != null)) {
-                    this.DataTable1RowDeleting(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
+                if ((this.UslugeRowDeleting != null)) {
+                    this.UslugeRowDeleting(this, new UslugeRowChangeEvent(((UslugeRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveDataTable1Row(DataTable1Row row) {
+            public void RemoveUslugeRow(UslugeRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -537,7 +508,7 @@ namespace VeterinarskaStanica.WinUI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                NarudzbeSet ds = new NarudzbeSet();
+                UslugeSet ds = new UslugeSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -555,7 +526,7 @@ namespace VeterinarskaStanica.WinUI {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "DataTable1DataTable";
+                attribute2.FixedValue = "UslugeDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -599,36 +570,47 @@ namespace VeterinarskaStanica.WinUI {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class DataTable1Row : global::System.Data.DataRow {
+        public partial class UslugeRow : global::System.Data.DataRow {
             
-            private DataTable1DataTable tableDataTable1;
+            private UslugeDataTable tableUsluge;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal DataTable1Row(global::System.Data.DataRowBuilder rb) : 
+            internal UslugeRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableDataTable1 = ((DataTable1DataTable)(this.Table));
+                this.tableUsluge = ((UslugeDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string BrojNarudzbe {
+            public string Naziv {
                 get {
-                    return ((string)(this[this.tableDataTable1.BrojNarudzbeColumn]));
+                    return ((string)(this[this.tableUsluge.NazivColumn]));
                 }
                 set {
-                    this[this.tableDataTable1.BrojNarudzbeColumn] = value;
+                    this[this.tableUsluge.NazivColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime Datum {
+            public string Sifra {
                 get {
-                    return ((global::System.DateTime)(this[this.tableDataTable1.DatumColumn]));
+                    return ((string)(this[this.tableUsluge.SifraColumn]));
                 }
                 set {
-                    this[this.tableDataTable1.DatumColumn] = value;
+                    this[this.tableUsluge.SifraColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal Cijena {
+                get {
+                    return ((decimal)(this[this.tableUsluge.CijenaColumn]));
+                }
+                set {
+                    this[this.tableUsluge.CijenaColumn] = value;
                 }
             }
             
@@ -636,61 +618,11 @@ namespace VeterinarskaStanica.WinUI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Status {
                 get {
-                    return ((bool)(this[this.tableDataTable1.StatusColumn]));
+                    return ((bool)(this[this.tableUsluge.StatusColumn]));
                 }
                 set {
-                    this[this.tableDataTable1.StatusColumn] = value;
+                    this[this.tableUsluge.StatusColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Otkazano {
-                get {
-                    try {
-                        return ((bool)(this[this.tableDataTable1.OtkazanoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Otkazano\' in table \'DataTable1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable1.OtkazanoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string PaymentId {
-                get {
-                    return ((string)(this[this.tableDataTable1.PaymentIdColumn]));
-                }
-                set {
-                    this[this.tableDataTable1.PaymentIdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Kolicina {
-                get {
-                    return ((int)(this[this.tableDataTable1.KolicinaColumn]));
-                }
-                set {
-                    this[this.tableDataTable1.KolicinaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsOtkazanoNull() {
-                return this.IsNull(this.tableDataTable1.OtkazanoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetOtkazanoNull() {
-                this[this.tableDataTable1.OtkazanoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -698,22 +630,22 @@ namespace VeterinarskaStanica.WinUI {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class DataTable1RowChangeEvent : global::System.EventArgs {
+        public class UslugeRowChangeEvent : global::System.EventArgs {
             
-            private DataTable1Row eventRow;
+            private UslugeRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataTable1RowChangeEvent(DataTable1Row row, global::System.Data.DataRowAction action) {
+            public UslugeRowChangeEvent(UslugeRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataTable1Row Row {
+            public UslugeRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -729,7 +661,7 @@ namespace VeterinarskaStanica.WinUI {
         }
     }
 }
-namespace VeterinarskaStanica.WinUI.NarudzbeSetTableAdapters {
+namespace VeterinarskaStanica.WinUI.UslugeSetTableAdapters {
     
     
     /// <summary>
@@ -741,7 +673,7 @@ namespace VeterinarskaStanica.WinUI.NarudzbeSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class DataTable1TableAdapter : global::System.ComponentModel.Component {
+    public partial class UslugeTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -755,7 +687,7 @@ namespace VeterinarskaStanica.WinUI.NarudzbeSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public DataTable1TableAdapter() {
+        public UslugeTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -852,13 +784,11 @@ namespace VeterinarskaStanica.WinUI.NarudzbeSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "DataTable1";
-            tableMapping.ColumnMappings.Add("BrojNarudzbe", "BrojNarudzbe");
-            tableMapping.ColumnMappings.Add("Datum", "Datum");
+            tableMapping.DataSetTable = "Usluge";
+            tableMapping.ColumnMappings.Add("Naziv", "Naziv");
+            tableMapping.ColumnMappings.Add("Sifra", "Sifra");
+            tableMapping.ColumnMappings.Add("Cijena", "Cijena");
             tableMapping.ColumnMappings.Add("Status", "Status");
-            tableMapping.ColumnMappings.Add("Otkazano", "Otkazano");
-            tableMapping.ColumnMappings.Add("PaymentId", "PaymentId");
-            tableMapping.ColumnMappings.Add("Kolicina", "Kolicina");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -866,8 +796,8 @@ namespace VeterinarskaStanica.WinUI.NarudzbeSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=\"localhost, 1401\";Initial Catalog=VeterinarskaStanica;Persist Securit" +
-                "y Info=True;User ID=sa;Password=QWElkj132!";
+            this._connection.ConnectionString = "Data Source=localhost,1401;Initial Catalog=VeterinarskaStanica;Persist Security I" +
+                "nfo=True;User ID=sa;Password=QWElkj132!";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -876,9 +806,7 @@ namespace VeterinarskaStanica.WinUI.NarudzbeSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Narudzbe.BrojNarudzbe, Narudzbe.Datum, Narudzbe.Status, Narudzbe.Otkazano," +
-                " Narudzbe.PaymentId, NarudzbaStavke.Kolicina\nFROM     Narudzbe INNER JOIN\n      " +
-                "            NarudzbaStavke ON Narudzbe.NarudzbaID = NarudzbaStavke.NarudzbaID";
+            this._commandCollection[0].CommandText = "SELECT Naziv, Sifra, Cijena, Status\r\nFROM     Usluge";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -886,7 +814,7 @@ namespace VeterinarskaStanica.WinUI.NarudzbeSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(NarudzbeSet.DataTable1DataTable dataTable) {
+        public virtual int Fill(UslugeSet.UslugeDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -899,9 +827,9 @@ namespace VeterinarskaStanica.WinUI.NarudzbeSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual NarudzbeSet.DataTable1DataTable GetData() {
+        public virtual UslugeSet.UslugeDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            NarudzbeSet.DataTable1DataTable dataTable = new NarudzbeSet.DataTable1DataTable();
+            UslugeSet.UslugeDataTable dataTable = new UslugeSet.UslugeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -975,7 +903,7 @@ namespace VeterinarskaStanica.WinUI.NarudzbeSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(NarudzbeSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(UslugeSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -985,7 +913,7 @@ namespace VeterinarskaStanica.WinUI.NarudzbeSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(NarudzbeSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(UslugeSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -995,7 +923,7 @@ namespace VeterinarskaStanica.WinUI.NarudzbeSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(NarudzbeSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(UslugeSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1029,7 +957,7 @@ namespace VeterinarskaStanica.WinUI.NarudzbeSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(NarudzbeSet dataSet) {
+        public virtual int UpdateAll(UslugeSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
             SuspendLayout();
             // 
             // reportViewer1
@@ -39,6 +40,11 @@
             reportViewer1.ServerReport.BearerToken = null;
             reportViewer1.Size = new Size(800, 800);
             reportViewer1.TabIndex = 0;
+            // 
+            // sqlCommand1
+            // 
+            sqlCommand1.CommandTimeout = 30;
+            sqlCommand1.EnableOptimizedParameterBinding = false;
             // 
             // frmKorisniciReport
             // 
@@ -55,5 +61,6 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
     }
 }
