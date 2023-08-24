@@ -17,13 +17,7 @@
 
 7. Now you can start the project by clicking on the **Start button** in command ribbon.
 
-8. After your browser loads, please go to the folowing link **"http://localhost:5192/swagger/index.html"**.
-
-9. Click on the authorize button and enter following credentials: **Username: admin, Password: admin**.
-
-10. Before starting the main application, please go to the following link to activate recommenation system: **"http://localhost:5192/Proizvodi/1/Recommend"**, then reload page once more to get training data.
-
-11. Now you can login to desktop application using credentials: **Username: admin, Password: admin**.
+8. Now you can login to desktop application using credentials: **Username: admin, Password: admin**.
 
 
 ### Instructions for starting mobile application:
@@ -40,8 +34,6 @@
 
 6. Login credentials are: **Korisničko ime: admin, Lozinka: admin**.
 
-7. Please be sure that you followed step 10 in the previous instructions before clicking on any of the products in the list.
+7. Now you can buy products or make reservations.
 
-8. Now you can buy products or make reservations.
-
-9. You need to use test card number: **4242 4242 4242 4242, date od issuing the card and CVC number are provisional, and ZIP code is also provisional, but you need to enter 5 digits**.
+8. You need to use test card number: **4242 4242 4242 4242, choose Bosnia and Herzegovina from list of available countries, date of issuing the card and CVC number are provisional.**.
