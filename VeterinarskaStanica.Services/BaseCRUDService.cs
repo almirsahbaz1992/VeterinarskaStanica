@@ -34,19 +34,24 @@ namespace VeterinarskaStanica.Services
 		{
 
 		}
-		public virtual T Update(int id, TUpdate update)
+        public virtual void BeforeUpdate(TUpdate update, TDb entity)
+        {
+
+        }
+        public virtual T Update(int id, TUpdate update)
 		{
 			var set = Context.Set<TDb>();
 			var entity = set.Find(id);
-			if (entity != null) 
+            if (entity != null) 
 			{
-				Mapper.Map(update, entity);
+                BeforeUpdate(update, entity);
+                Mapper.Map(update, entity);
 			}
 			else
 			{
 				return null;
 			}
-			Context.SaveChanges();
+            Context.SaveChanges();
 			return Mapper.Map<T>(entity);
 		}
 	}

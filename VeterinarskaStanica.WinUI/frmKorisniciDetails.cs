@@ -82,8 +82,9 @@ namespace VeterinarskaStanica.WinUI
 				}
 				else
 				{
-					KorisniciUpdateRequest updateRequest = new KorisniciUpdateRequest()
+                    KorisniciUpdateRequest updateRequest = new KorisniciUpdateRequest()
 					{
+
 						Ime = txtIme.Text,
 						Prezime = txtPrezime.Text,
 						Telefon = txtTelefon.Text,
@@ -297,6 +298,6 @@ namespace VeterinarskaStanica.WinUI
 				errorProvider8.SetError(txtTelefon, "");
 			}
 		}
-	}
+    }
 
 }

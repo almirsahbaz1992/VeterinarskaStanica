@@ -35,7 +35,14 @@ namespace VeterinarskaStanica.Services
 			Context.SaveChanges();
 			return entity;
 		}
-		public override void BeforeInsert(KorisniciInsertRequest insert, Database.Korisnici entity)
+        public override void BeforeUpdate (KorisniciUpdateRequest update, Database.Korisnici entity)
+        {
+            var salt = GenerateSalt();
+            entity.LozinkaSalt = salt;
+            entity.LozinkaHash = GenerateHash(salt, update.Password);
+            base.BeforeUpdate(update, entity);
+        }
+        public override void BeforeInsert(KorisniciInsertRequest insert, Database.Korisnici entity)
 		{
 			var salt = GenerateSalt();
 			entity.LozinkaSalt = salt;
