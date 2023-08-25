@@ -82,6 +82,7 @@ namespace VeterinarskaStanica.WinUI
 				}
 				else
 				{
+
                     KorisniciUpdateRequest updateRequest = new KorisniciUpdateRequest()
 					{
 
@@ -91,7 +92,7 @@ namespace VeterinarskaStanica.WinUI
 						Password = txtPassword.Text,
 						PasswordPotvrda = txtPotvrda.Text,
 						Status = cbStatus.Checked,
-					};
+                    };
 
 					_model = await KorisniciService.Put<Korisnici>(_model.KorisnikId, updateRequest);
 					MessageBox.Show("Uspješno ste ažurirali korisničke podatke!");

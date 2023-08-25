@@ -17,5 +17,5 @@ namespace VeterinarskaStanica.Model.Request
 		public string PasswordPotvrda { get; set; }
 
 		public bool? Status { get; set; }
-	}
+    }
 }
