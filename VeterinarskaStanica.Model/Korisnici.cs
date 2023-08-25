@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.ComponentModel.DataAnnotations;
+using System.Security.Cryptography.X509Certificates;
 
 namespace VeterinarskaStanica.Model
 {
@@ -19,7 +20,7 @@ namespace VeterinarskaStanica.Model
 
 		public string KorisnickoIme { get; set; }
 
-		public bool? Status { get; set; }
+        public bool? Status { get; set; }
 
 		public virtual ICollection<KorisniciUloge> KorisniciUloges { get; set; } = new List<KorisniciUloge>();
 		public virtual ICollection<Narudzbe> Narudzbes { get; set; } = new List<Narudzbe>();

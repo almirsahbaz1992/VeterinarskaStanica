@@ -17,21 +17,21 @@ namespace VeterinarskaStanica.WinUI
 		private readonly APIService _api = new APIService("Korisnici");
 		public frmLogin()
 		{
+            InitializeComponent();
+			this.CenterToScreen();
+        }
+		private async void btnLogin_Click(object sender, EventArgs e)
+		{
+			APIService.Username = txtUsername.Text;
+			APIService.Password = txtPassword.Text;
             ProcessStartInfo psInfo = new ProcessStartInfo
             {
                 FileName = "https://localhost:7172/Proizvodi/1/Recommend",
                 UseShellExecute = true
             };
             Process.Start(psInfo);
-            InitializeComponent();
-			this.CenterToScreen();
-		}
-		private async void btnLogin_Click(object sender, EventArgs e)
-		{
-			APIService.Username = txtUsername.Text;
-			APIService.Password = txtPassword.Text;
-
-			try
+            Process.Start(psInfo);
+            try
 			{
 				var result = await _api.Get<dynamic>();
 				MDIMain frm = new MDIMain();
